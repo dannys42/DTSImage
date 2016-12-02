@@ -33,7 +33,7 @@ public struct DTSPixelRGBA8: DTSPixel {
     public init(red: Float, green: Float, blue: Float) {
         self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
-    init(red: Float, green: Float, blue: Float, alpha: Float) {
+    public init(red: Float, green: Float, blue: Float, alpha: Float) {
         self.value = 0x00
         self.red = UInt8(Int(red * 255))
         self.green = UInt8(Int(green * 255))

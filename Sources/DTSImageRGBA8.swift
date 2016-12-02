@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct DTSImageRGBA8 {
+public struct DTSImageRGBA8 {
     public private(set) var pixels: [DTSPixelRGBA8]
     public private(set) var width: Int
     public private(set) var height: Int
@@ -18,31 +18,61 @@ struct DTSImageRGBA8 {
     private static let bitsPerPixel = bytesPerPixel * 8
     private let bytesPerRow: Int
     
-    func numPixels() -> Int {
+    public enum imageError: Error {
+        case outOfRange
+    }
+    public func numPixels() -> Int {
         return width * height
     }
-    func value(x: Int, y: Int) -> DTSPixelRGBA8 {
+    
+    public func coordinateIsValid(x:Int, y:Int) -> Bool {
+        guard x >= 0 else { return false }
+        guard x < self.width else { return false }
+        guard y >= 0 else { return false }
+        guard y < self.height else { return false }
+        
+        return true
+    }
+    public func getPixel(x: Int, y:Int) throws -> DTSPixelRGBA8 {
+        guard self.coordinateIsValid(x: x, y: y) else { throw imageError.outOfRange }
         return self.pixels[width * y + x]
     }
-    init?(image: UIImage) {
+    public mutating func setPixel(x: Int, y:Int, pixel: DTSPixelRGBA8) throws {
+        guard self.coordinateIsValid(x: x, y: y) else { throw imageError.outOfRange }
+        self.pixels[width * y + x] = pixel
+    }
+    public init?(image: UIImage) {
         guard let cgImage = image.cgImage else { return nil }
+
+        let width = Int(image.size.width)
+        let height = Int(image.size.height)
+        let numPixels = width * height
+        self.width = width
+        self.height = height
         
-        self.width = Int(image.size.width)
-        self.height = Int(image.size.height)
-        
-        self.bytesPerRow = width * DTSImageRGBA8.bytesPerPixel
-        let black = DTSPixelRGBA8.black()
-        self.pixels = [DTSPixelRGBA8](repeating: black, count: width * height)
-        let imageData = UnsafeMutablePointer<DTSPixelRGBA8>.allocate(capacity: width * height)
+        let bytesPerRow = width * DTSImageRGBA8.bytesPerPixel
+        self.bytesPerRow = bytesPerRow
+        let black = DTSPixelRGBA8(red: 0.25, green: 0.25, blue: 0.0)
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
         var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue
         bitmapInfo |= CGImageAlphaInfo.premultipliedLast.rawValue & CGBitmapInfo.alphaInfoMask.rawValue
-        guard let imageContext = CGContext(data: imageData, width: width, height: height, bitsPerComponent: DTSImageRGBA8.bitsPerComponent, bytesPerRow: bytesPerRow, space: colorSpace, bitmapInfo: bitmapInfo)
+
+        var pixels = [DTSPixelRGBA8](repeating: black, count: numPixels)
+        let buffer = UnsafeMutableBufferPointer(start: &pixels, count: numPixels).baseAddress!
+        guard var imageContext = CGContext(data: buffer,
+                                           width: width,
+                                           height: height,
+                                           bitsPerComponent: DTSImageRGBA8.bitsPerComponent,
+                                           bytesPerRow: bytesPerRow,
+                                           space: colorSpace,
+                                           bitmapInfo: bitmapInfo)
             else { return nil }
         imageContext.draw(cgImage, in: CGRect(origin: CGPoint.zero, size: image.size))
+
+        self.pixels = pixels
     }
-    func toUIImage() -> UIImage? {
+    public func toUIImage() -> UIImage? {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
         var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue
