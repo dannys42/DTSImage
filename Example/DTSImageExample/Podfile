@@ -1,0 +1,14 @@
+platform :ios, '10.0'
+use_frameworks!
+
+target 'DTSImageExample' do
+    #pod 'DTSImage', :git => 'https://github.com/dannys42/DTSImage.git'
+    pod 'DTSImage', :path => "../../"
+
+    target 'DTSImageExampleTests' do
+        inherit! :search_paths
+    end
+    target 'DTSImageExampleUITests' do
+        inherit! :search_paths
+    end
+end

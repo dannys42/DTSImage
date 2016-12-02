@@ -1,0 +1,6 @@
+framework module DTSImage {
+  umbrella header "DTSImage-umbrella.h"
+
+  export *
+  module * { export * }
+}

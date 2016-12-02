@@ -1,0 +1,16 @@
+PODS:
+  - DTSImage (0.1.0)
+
+DEPENDENCIES:
+  - DTSImage (from `../../`)
+
+EXTERNAL SOURCES:
+  DTSImage:
+    :path: ../../
+
+SPEC CHECKSUMS:
+  DTSImage: 394d7208b5c5a20c53bb10a09e06ee50cda603be
+
+PODFILE CHECKSUM: 07527472cee582aa4dc317e6fbbd9695f1719465
+
+COCOAPODS: 1.1.1

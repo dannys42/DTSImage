@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "D5AD09A7DD247EBD0CFEC29E583D8B815C7911E4",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FE959E886A1A82BA9BBF5054D2885B9903F24B5A" : 9223372036854775807,
+    "D5AD09A7DD247EBD0CFEC29E583D8B815C7911E4" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "10052650-816C-4DA0-B0C8-3C14173FADEB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FE959E886A1A82BA9BBF5054D2885B9903F24B5A" : "..",
+    "D5AD09A7DD247EBD0CFEC29E583D8B815C7911E4" : "DTSImage\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DTSImageExample",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Example\/DTSImageExample\/DTSImageExample.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dannys42\/DTSImage.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "D5AD09A7DD247EBD0CFEC29E583D8B815C7911E4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:dannys42\/longshot.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FE959E886A1A82BA9BBF5054D2885B9903F24B5A"
+    }
+  ]
+}

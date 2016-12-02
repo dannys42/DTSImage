@@ -1,0 +1,6 @@
+framework module Pods_DTSImageExampleTests {
+  umbrella header "Pods-DTSImageExampleTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

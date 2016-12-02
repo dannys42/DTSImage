@@ -1,0 +1,22 @@
+{
+  "name": "DTSImage",
+  "version": "0.1.0",
+  "summary": "A short description of DTSImage.",
+  "description": "Swift library to manage images as raw buffers",
+  "homepage": "https://github.com/dannys42/DTSImage",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Danny Sung": "danny@dannysung.com"
+  },
+  "source": {
+    "git": "https://github.com/dannys42/DTSImage.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "10.0"
+  },
+  "source_files": "Sources/**/*.swift"
+}
