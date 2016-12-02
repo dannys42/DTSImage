@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct DTSImageRGBA8 {
+public struct DTSImageRGBA8: DTSImage {
     public private(set) var pixels: [DTSPixelRGBA8]
     public private(set) var width: Int
     public private(set) var height: Int
@@ -18,27 +18,12 @@ public struct DTSImageRGBA8 {
     private static let bitsPerPixel = bytesPerPixel * 8
     private let bytesPerRow: Int
     
-    public enum imageError: Error {
-        case outOfRange
-    }
-    public func numPixels() -> Int {
-        return width * height
-    }
-    
-    public func coordinateIsValid(x:Int, y:Int) -> Bool {
-        guard x >= 0 else { return false }
-        guard x < self.width else { return false }
-        guard y >= 0 else { return false }
-        guard y < self.height else { return false }
-        
-        return true
-    }
     public func getPixel(x: Int, y:Int) throws -> DTSPixelRGBA8 {
-        guard self.coordinateIsValid(x: x, y: y) else { throw imageError.outOfRange }
+        guard self.coordinateIsValid(x: x, y: y) else { throw DTSImageError.outOfRange }
         return self.pixels[width * y + x]
     }
     public mutating func setPixel(x: Int, y:Int, pixel: DTSPixelRGBA8) throws {
-        guard self.coordinateIsValid(x: x, y: y) else { throw imageError.outOfRange }
+        guard self.coordinateIsValid(x: x, y: y) else { throw DTSImageError.outOfRange }
         self.pixels[width * y + x] = pixel
     }
     public init?(image: UIImage) {
@@ -52,7 +37,7 @@ public struct DTSImageRGBA8 {
         
         let bytesPerRow = width * DTSImageRGBA8.bytesPerPixel
         self.bytesPerRow = bytesPerRow
-        let black = DTSPixelRGBA8(red: 0.25, green: 0.25, blue: 0.0)
+        let black = DTSPixelRGBA8.black()
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
         var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue
@@ -90,7 +75,7 @@ public struct DTSImageRGBA8 {
         
         guard let buffer = imageContext.data else { return nil }
         
-        let pixels = buffer.bindMemory(to: DTSPixelRGBA8.self, capacity: self.numPixels())
+        let pixels = buffer.bindMemory(to: DTSPixelRGBA8.self, capacity: self.numPixels)
         for row in 0 ..< height {
             for col in 0 ..< width {
                 let offset = row * self.width + col
