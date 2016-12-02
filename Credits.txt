@@ -1,3 +1,6 @@
 Thanks to Marius Horga for creating this article, which helped inspire this project:
     http://mhorga.org/2015/10/19/image-processing-in-ios-part-3.html
 
+Additional shout-out to Dennis Lysenko
+    https://github.com/dennislysenko/RGBAImageBuffer
+
