@@ -11,11 +11,20 @@ import Accelerate
 
 /// A Container to manage an image as an array of single precision floating point numbers
 public struct DTSImageRGBAF: DTSImage {
-    public private(set) var pixels: [Float]
+    public var pixels: [Float]
+    static public var numberOfComponentsPerPixel: Int = 4
+
     // MARK: Protocol Conformance
     public private(set) var width: Int
     public private(set) var height: Int
     
+    public init?(width: Int, height: Int, pixels: [Float]) {
+        guard pixels.count >= width * height * DTSImageRGBAF.numberOfComponentsPerPixel else { return nil }
+        
+        self.width = width
+        self.height = height
+        self.pixels = pixels
+    }
     public init?(image: UIImage) {
         guard let rgb8Image = DTSImageRGBA8(image: image) else { return nil }
         
@@ -44,27 +53,6 @@ public struct DTSImageRGBAF: DTSImage {
         // Normalize all pixels to range from 0..1
         var value = Float(255)
         vDSP_vsdiv(&pixels, 1, &value, &pixels, 1, UInt(numTotalComponents))
-
-        #if false
-        rgb8Image.pixels.withUnsafeBufferPointer { inputPixelPtr in
-            inputPixelPtr.baseAddress!.withMemoryRebound(to: Int8.self, capacity: numPixels*4) { inputIntPtr in
-                let inPixels = UnsafePointer<Int8>(inputIntPtr)
-
-                pixels.withUnsafeMutableBufferPointer { outputPixelPtr in
-                    print("outputPixelPtr:  \(outputPixelPtr)  base: \(outputPixelPtr.baseAddress)")
-                    outputPixelPtr.baseAddress!.withMemoryRebound(to: Float.self, capacity: numPixels*4) { outputFloatPtr in
-                        let outPixels = UnsafeMutablePointer<Float>(outputFloatPtr)
-
-                        print("outputPixelPtr:  \(outputPixelPtr)  base: \(outputPixelPtr.baseAddress)")
-                        print("outputFloatPtr:  \(outputFloatPtr)")
-                        print("outPixels:  \(outPixels)")
-                        
-                        vDSP_vflt8(inPixels, 1, outPixels, 1, UInt(numTotalComponents))
-                    }
-                }
-            }
-        }
-        #endif
         
         self.pixels = pixels
         self.width = width
