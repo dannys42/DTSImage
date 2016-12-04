@@ -13,6 +13,7 @@ public enum DTSImageError: Error {
 }
 
 public protocol DTSImage {
+    associatedtype PixelType
     var width: Int { get }
     var height: Int { get }
     var numPixels: Int { get }
@@ -22,8 +23,8 @@ public protocol DTSImage {
     init?(image: UIImage)
     func toUIImage() -> UIImage?
     
-    func getPixel(x: Int, y:Int) throws -> DTSPixelRGBA8
-    mutating func setPixel(x: Int, y:Int, pixel: DTSPixelRGBA8) throws
+    func getPixel(x: Int, y:Int) throws -> PixelType
+    mutating func setPixel(x: Int, y:Int, pixel: PixelType)
 }
 
 extension DTSImage {

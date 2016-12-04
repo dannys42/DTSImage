@@ -14,6 +14,9 @@
 		142C67E81DF084D40046A05B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 142C67E61DF084D40046A05B /* LaunchScreen.storyboard */; };
 		142C67F31DF084D40046A05B /* DTSImageExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C67F21DF084D40046A05B /* DTSImageExampleTests.swift */; };
 		142C67FE1DF084D50046A05B /* DTSImageExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142C67FD1DF084D50046A05B /* DTSImageExampleUITests.swift */; };
+		14B7E58E1DF29E07007A7776 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7E58D1DF29E07007A7776 /* CollectionViewController.swift */; };
+		14B7E5901DF29F74007A7776 /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B7E58F1DF29F74007A7776 /* ImageCell.swift */; };
+		14B7E5921DF2AEA2007A7776 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14B7E5911DF2AEA2007A7776 /* Accelerate.framework */; };
 		4F67B5A69B80D27A6DFB35AF /* Pods_DTSImageExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDDBB40671B9D7EFB6F5F89 /* Pods_DTSImageExampleTests.framework */; };
 		9C01759408D32BCAABF98151 /* Pods_DTSImageExampleUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 573E9D82915EAC95651DF560 /* Pods_DTSImageExampleUITests.framework */; };
 		F291D7500351617462AAD7A6 /* Pods_DTSImageExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6DFBF42D3B56E1C1FDB727A7 /* Pods_DTSImageExample.framework */; };
@@ -50,6 +53,9 @@
 		142C67F91DF084D50046A05B /* DTSImageExampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DTSImageExampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		142C67FD1DF084D50046A05B /* DTSImageExampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DTSImageExampleUITests.swift; sourceTree = "<group>"; };
 		142C67FF1DF084D50046A05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14B7E58D1DF29E07007A7776 /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		14B7E58F1DF29F74007A7776 /* ImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		14B7E5911DF2AEA2007A7776 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		573E9D82915EAC95651DF560 /* Pods_DTSImageExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTSImageExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DFBF42D3B56E1C1FDB727A7 /* Pods_DTSImageExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTSImageExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		79F30A5C6497C3835B28349D /* Pods-DTSImageExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DTSImageExampleUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DTSImageExampleUITests/Pods-DTSImageExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B7E5921DF2AEA2007A7776 /* Accelerate.framework in Frameworks */,
 				F291D7500351617462AAD7A6 /* Pods_DTSImageExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -117,6 +124,8 @@
 				142C67DD1DF084D40046A05B /* AppDelegate.swift */,
 				142C67DF1DF084D40046A05B /* ViewController.swift */,
 				142C67E11DF084D40046A05B /* Main.storyboard */,
+				14B7E58D1DF29E07007A7776 /* CollectionViewController.swift */,
+				14B7E58F1DF29F74007A7776 /* ImageCell.swift */,
 				142C67E41DF084D40046A05B /* Assets.xcassets */,
 				142C67E61DF084D40046A05B /* LaunchScreen.storyboard */,
 				142C67E91DF084D40046A05B /* Info.plist */,
@@ -145,6 +154,7 @@
 		AA04B822685F4507D2C9B416 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				14B7E5911DF2AEA2007A7776 /* Accelerate.framework */,
 				6DFBF42D3B56E1C1FDB727A7 /* Pods_DTSImageExample.framework */,
 				DBDDBB40671B9D7EFB6F5F89 /* Pods_DTSImageExampleTests.framework */,
 				573E9D82915EAC95651DF560 /* Pods_DTSImageExampleUITests.framework */,
@@ -449,6 +459,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14B7E58E1DF29E07007A7776 /* CollectionViewController.swift in Sources */,
+				14B7E5901DF29F74007A7776 /* ImageCell.swift in Sources */,
 				142C67E01DF084D40046A05B /* ViewController.swift in Sources */,
 				142C67DE1DF084D40046A05B /* AppDelegate.swift in Sources */,
 			);

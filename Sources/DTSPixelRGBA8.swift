@@ -8,6 +8,8 @@
 
 import Foundation
 
+/// A single pixel represented by 8-bit R, G, B, A values.
+/// Where R is the most significant byte, and A is the least signifanct.
 public struct DTSPixelRGBA8: DTSPixel {
     public var value: UInt32
     public var red: UInt8 {
@@ -27,11 +29,11 @@ public struct DTSPixelRGBA8: DTSPixel {
         set { value = (UInt32(newValue) << 24) | (value & 0x00FFFFFF) }
     }
     
+    static public var bytesPerPixel: Int = MemoryLayout<UInt32>.size
+    static public var numberOfElementsPerPixel: Int = 4
+    
     init(value: UInt32) {
         self.value = value
-    }
-    public init(red: Float, green: Float, blue: Float) {
-        self.init(red: red, green: green, blue: blue, alpha: 1.0)
     }
     public init(red: Float, green: Float, blue: Float, alpha: Float) {
         self.value = 0x00
@@ -39,6 +41,13 @@ public struct DTSPixelRGBA8: DTSPixel {
         self.green = UInt8(Int(green * 255))
         self.blue = UInt8(Int(blue * 255))
         self.alpha = UInt8(Int(alpha * 255))
+    }
+    public init(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) {
+        self.value = 0x00
+        self.red = red
+        self.green = green
+        self.blue = blue
+        self.alpha = alpha
     }
     
 }

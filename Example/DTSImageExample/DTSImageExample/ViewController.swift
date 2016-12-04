@@ -55,7 +55,7 @@ class ViewController: UIViewController {
         
         let red = DTSPixelRGBA8(red: 1.0, green: 0.5, blue: 0.5, alpha: 1.0)
         for y in 0..<dtsImage.height {
-            try? dtsImage.setPixel(x: y - offset, y: y + offset, pixel: red)
+            dtsImage.setPixel(x: y - offset, y: y + offset, pixel: red)
         }
         
         let newImage = dtsImage.toUIImage()
