@@ -25,6 +25,7 @@ public protocol DTSImage {
     
     init?(image: UIImage)
     init?(width: Int, height: Int, pixels: [ComponentType])
+    init(width: Int, height: Int)
 
     func toUIImage() -> UIImage?
     func getPixel(x: Int, y:Int) throws -> PixelType

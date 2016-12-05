@@ -11,6 +11,7 @@
 		089C64786982F082AFEA8D4FF1C6A66E /* Pods-DTSImageExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0599039E323254595BAB1A11EC2414 /* Pods-DTSImageExample-dummy.m */; };
 		14ABD54F1DF4DD8E001626E4 /* DTSImagePlanarF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABD54E1DF4DD8E001626E4 /* DTSImagePlanarF.swift */; };
 		14ABD5511DF4E118001626E4 /* DTSPixelF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABD5501DF4E118001626E4 /* DTSPixelF.swift */; };
+		14ABD5531DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABD5521DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift */; };
 		153FE7F409FBD30967183BE13DF06887 /* DTSImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B449E719CC55F8569B9280A78AFC9 /* DTSImage-dummy.m */; };
 		34910F3AA27081AD38E0C711EA359045 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */; };
 		3C4EF611A7378C340599B6866B41FABC /* Pods-DTSImageExampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38850EA9D156CEEB579655B03BB7400B /* Pods-DTSImageExampleUITests-dummy.m */; };
@@ -49,6 +50,7 @@
 		148C715B43EB0090FF47BBDB17F1CE0C /* Pods_DTSImageExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTSImageExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14ABD54E1DF4DD8E001626E4 /* DTSImagePlanarF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSImagePlanarF.swift; sourceTree = "<group>"; };
 		14ABD5501DF4E118001626E4 /* DTSPixelF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSPixelF.swift; sourceTree = "<group>"; };
+		14ABD5521DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DTSImageRGBAF+Algorithms.swift"; sourceTree = "<group>"; };
 		172F200325B7F069434B8E0431A28321 /* DTSImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTSImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F487B91490111A325076FB5E045D6 /* Pods-DTSImageExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DTSImageExampleUITests-umbrella.h"; sourceTree = "<group>"; };
 		1E57E1CCED8E958A0D3C6E6982B19204 /* DTSImageRGBA8.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImageRGBA8.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 				14ABD54E1DF4DD8E001626E4 /* DTSImagePlanarF.swift */,
 				1E57E1CCED8E958A0D3C6E6982B19204 /* DTSImageRGBA8.swift */,
 				F997E17F7CD742E278852BE2C05AA48E /* DTSImageRGBAF.swift */,
+				14ABD5521DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift */,
 				70532B827D463D6F0DE55BDDD905F5B3 /* DTSPixel.swift */,
 				B4D70071E358116A086DED729B816F38 /* DTSPixelRGBA8.swift */,
 				48AF40D41154D5138EB20DC26CCA474B /* DTSPixelRGBAF.swift */,
@@ -426,6 +429,7 @@
 				0839FE9C720CAE7C45D1146229857999 /* DTSImage.swift in Sources */,
 				14ABD5511DF4E118001626E4 /* DTSPixelF.swift in Sources */,
 				14ABD54F1DF4DD8E001626E4 /* DTSImagePlanarF.swift in Sources */,
+				14ABD5531DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift in Sources */,
 				E18423C492A579E811FB2E91C3420FD1 /* DTSImageRGBA8.swift in Sources */,
 				FD620A66A012ED3D00AAEDEAF21DC3B3 /* DTSImageRGBAF.swift in Sources */,
 				5AF6DC94DCC4568A9CA73077A7F2B31F /* DTSPixel.swift in Sources */,

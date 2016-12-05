@@ -25,6 +25,12 @@ public struct DTSImageRGBAF: DTSImage {
         self.height = height
         self.pixels = pixels
     }
+    public init(width: Int, height: Int) {
+        let totalNumberOfComponents = width * height * DTSImageRGBAF.numberOfComponentsPerPixel
+        var pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
+        
+        self.init(width: width, height: height, pixels: pixels)!
+    }
     public init?(image: UIImage) {
         guard let rgb8Image = DTSImageRGBA8(image: image) else { return nil }
         

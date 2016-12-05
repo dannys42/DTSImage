@@ -42,6 +42,13 @@ public struct DTSImageRGBA8: DTSImage {
         self.height = height
         self.pixels = pixels
     }
+    public init(width: Int, height: Int) {
+        let numBytes = width * height * DTSImageRGBA8.numberOfComponentsPerPixel
+        let pixels = [UInt8].init(repeating: UInt8.min, count: numBytes)
+        
+        self.init(width: width, height: height, pixels: pixels)!
+    }
+
     
     public init?(image: UIImage) {
         guard let cgImage = image.cgImage else { return nil }

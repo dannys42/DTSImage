@@ -25,6 +25,12 @@ public struct DTSImagePlanarF: DTSImage {
         self.width = width
         self.height = height
     }
+    public init(width: Int, height: Int) {
+        let totalNumberOfComponents = width * height * DTSImagePlanarF.numberOfComponentsPerPixel
+        var pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
+        
+        self.init(width: width, height: height, pixels: pixels)!
+    }
     
     public func toUIImage() -> UIImage? {
         print("TBD") // TODO: Needs implementation
