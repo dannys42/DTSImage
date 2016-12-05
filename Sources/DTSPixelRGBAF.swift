@@ -49,9 +49,19 @@ public struct DTSPixelRGBAF: DTSPixel {
         }
     }
     static public var bytesPerPixel: Int = MemoryLayout<Float>.size
-    static public var numberOfElementsPerPixel: Int = 4
+    static public var numberOfComponentsPerPixel: Int = 4
 
     public init(red: Float, green: Float, blue: Float, alpha: Float) {
         self.values = [red, green, blue, alpha]
+    }
+    public init?(components: [Float]) {
+        guard components.count > 3 else { return nil }
+        let alpha: Float
+        if components.count > 3 {
+            alpha = components[3]
+        } else {
+            alpha = Float(1.0)
+        }
+        self.init(red: components[0], green: components[1], blue: components[2], alpha: alpha)
     }
 }

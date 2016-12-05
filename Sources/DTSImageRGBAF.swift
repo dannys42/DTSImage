@@ -96,7 +96,7 @@ public struct DTSImageRGBAF: DTSImage {
     
     public func getPixel(x: Int, y:Int) throws -> DTSPixelRGBAF {
         guard self.coordinateIsValid(x: x, y: y) else { throw DTSImageError.outOfRange }
-        let offset = (y * self.width + x) * DTSPixelRGBAF.numberOfElementsPerPixel
+        let offset = (y * self.width + x) * DTSPixelRGBAF.numberOfComponentsPerPixel
         let pixel = DTSPixelRGBAF(red: self.pixels[offset+0],
                                   green: self.pixels[offset+1],
                                   blue: self.pixels[offset+2],
@@ -105,7 +105,7 @@ public struct DTSImageRGBAF: DTSImage {
     }
     public mutating func setPixel(x: Int, y:Int, pixel: DTSPixelRGBAF) {
         guard self.coordinateIsValid(x: x, y: y) else { return }
-        let offset = (y * self.width + x) * DTSPixelRGBAF.numberOfElementsPerPixel
+        let offset = (y * self.width + x) * DTSPixelRGBAF.numberOfComponentsPerPixel
         self.pixels[offset+0] = pixel.red
         self.pixels[offset+1] = pixel.green
         self.pixels[offset+2] = pixel.blue

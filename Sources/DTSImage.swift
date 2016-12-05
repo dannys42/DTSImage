@@ -13,38 +13,35 @@ public enum DTSImageError: Error {
 }
 
 public protocol DTSImage {
-    associatedtype PixelType
+    associatedtype PixelType: DTSPixel
     associatedtype ComponentType
-    
+
+    /* Things you should define */
     var pixels: [ComponentType] { get set }
-    
+    static var numberOfComponentsPerPixel: Int { get }
+
     var width: Int { get }
     var height: Int { get }
-    var numPixels: Int { get }
     
-    func coordinateIsValid(x:Int, y:Int) -> Bool
-
     init?(image: UIImage)
     init?(width: Int, height: Int, pixels: [ComponentType])
 
     func toUIImage() -> UIImage?
-    
     func getPixel(x: Int, y:Int) throws -> PixelType
     mutating func setPixel(x: Int, y:Int, pixel: PixelType)
-
-    static var numberOfComponentsPerPixel: Int { get }
-
-    var numberOfPixelsPerImage: Int { get }
-    var numberOfComponentsPerImage: Int { get }
-    var numberOfComponentsPerRow: Int { get }
-    var numberOfBytesPerRow: Int { get }
     
-    static var numberOfBytesPerComponent: Int { get }
-    static var numberOfBitsPerComponent: Int { get }
-    static var numberOfBytesPerPixel: Int { get }
+    /* Things that don't usually need to overriding */
+    func coordinateIsValid(x:Int, y:Int) -> Bool
+    var numPixels: Int { get }
 }
 
 extension DTSImage {
+    public func offset(x:Int, y:Int) -> Int? {
+        guard self.coordinateIsValid(x: x, y: y) else { return nil }
+        let offset = (y * self.width + x) * PixelType.numberOfComponentsPerPixel
+
+        return offset
+    }
     
     public func coordinateIsValid(x:Int, y:Int) -> Bool {
         guard x >= 0 else { return false }
@@ -54,7 +51,26 @@ extension DTSImage {
         
         return true
     }
-    
+
+    #if false // not sure why this doesn't work
+    public func getPixel(x: Int, y:Int) throws -> PixelType {
+        guard self.coordinateIsValid(x: x, y: y) else { throw DTSImageError.outOfRange }
+        let offset = (y * self.width + x) * PixelType.numberOfComponentsPerPixel
+        let components: [Self.ComponentType] = [
+            self.pixels[offset+0],
+            self.pixels[offset+1],
+            self.pixels[offset+2],
+            self.pixels[offset+3],
+        ]
+        let pixel = PixelType(components: components)
+//        let pixel = DTSPixelRGBAF(red: self.pixels[offset+0],
+//                                  green: self.pixels[offset+1],
+//                                  blue: self.pixels[offset+2],
+//                                  alpha: self.pixels[offset+3])
+
+    }
+    #endif
+
     public var numPixels: Int {
         get {
             return self.width * self.height

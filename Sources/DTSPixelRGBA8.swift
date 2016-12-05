@@ -30,17 +30,28 @@ public struct DTSPixelRGBA8: DTSPixel {
     }
     
     static public var bytesPerPixel: Int = MemoryLayout<UInt32>.size
-    static public var numberOfElementsPerPixel: Int = 4
+    static public var numberOfComponentsPerPixel: Int = 4
     
     init(value: UInt32) {
         self.value = value
     }
+    public init?(components: [UInt8]) {
+        guard components.count > 3 else { return nil }
+        let alpha: UInt8
+        if components.count > 3 {
+            alpha = components[3]
+        } else {
+            alpha = UInt8.max
+        }
+        self.init(red: components[0], green: components[1], blue: components[2], alpha: alpha)
+    }
     public init(red: Float, green: Float, blue: Float, alpha: Float) {
         self.value = 0x00
-        self.red = UInt8(Int(red * 255))
-        self.green = UInt8(Int(green * 255))
-        self.blue = UInt8(Int(blue * 255))
-        self.alpha = UInt8(Int(alpha * 255))
+        let uintMax = Float(UInt8.max)
+        self.red = UInt8(Int(red * uintMax))
+        self.green = UInt8(Int(green * uintMax))
+        self.blue = UInt8(Int(blue * uintMax))
+        self.alpha = UInt8(Int(alpha * uintMax))
     }
     public init(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) {
         self.value = 0x00

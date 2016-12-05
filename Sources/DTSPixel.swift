@@ -9,10 +9,12 @@
 import Foundation
 
 public protocol DTSPixel {
+    associatedtype ComponentType
     init(red: Float, green: Float, blue: Float)
     init(red: Float, green: Float, blue: Float, alpha: Float)
+    init?(components: [ComponentType])
     
-    static var numberOfElementsPerPixel: Int { get }
+    static var numberOfComponentsPerPixel: Int { get }
 }
 
 public extension DTSPixel {
