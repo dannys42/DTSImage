@@ -27,9 +27,9 @@ public struct DTSPixelF: DTSPixel {
         set { self.value = alpha }
     }
     
-    static public var numberOfComponentsPerPixel: Int = 4
+    static public var numberOfComponentsPerPixel: Int = 1
     
-    init(value: Float) {
+    public init(_ value: Float) {
         self.value = value
     }
     public init(red: Float, green: Float, blue: Float, alpha: Float) {
@@ -41,7 +41,7 @@ public struct DTSPixelF: DTSPixel {
     }
     public init?(components: [Float]) {
         guard components.count > 0 else { return nil }
-        self.init(value: components[0])
+        self.init(components[0])
     }
 
 }
