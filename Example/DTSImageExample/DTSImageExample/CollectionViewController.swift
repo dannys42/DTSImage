@@ -43,13 +43,11 @@ class CollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 3
+        return 4
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -76,6 +74,10 @@ class CollectionViewController: UICollectionViewController {
         case 2:
             cell.titleLabel.text = "RGBAF"
             cell.imageView.image = self.rgbafImage
+            cell.backgroundColor = backgroundColor
+        case 3:
+            cell.titleLabel.text = "RGBAF w/ mask"
+            cell.imageView.image = self.rgbafImageWithMask
             cell.backgroundColor = backgroundColor
         default:
             cell.titleLabel.text = "(unknown)"
@@ -118,41 +120,51 @@ class CollectionViewController: UICollectionViewController {
     var originalImage: UIImage!
     var rgba8Image: UIImage?
     var rgbafImage: UIImage?
+    var rgbafImageWithMask: UIImage?
     
 
     // A simple way to make changes, allowing for visual inspection of changes
-    var offset: Int = 0
     func timerHandler() {
-        guard let originalImage = self.originalImage else { return }
         DispatchQueue.main.async {
-            self.createRGBA8Image(offset: self.offset)
-            self.createRGBAFImage(offset: self.offset)
-            
-            self.collectionView!.reloadData()
+            self.updateImages()
         }
+    }
+    
+    var offset: Int = 0
+    func updateImages() {
+        guard let originalImage = self.originalImage else { return }
+        self.rgba8Image = self.createRGBA8Image(offset: self.offset)?.toUIImage()
+        
+        if let rgbafImage = self.createRGBAFImage(offset: self.offset) {
+            self.rgbafImage = rgbafImage.toUIImage()
+            self.rgbafImageWithMask = self.createRGBAFImageWithMask(floatImage: rgbafImage,
+                                                                    offset: self.offset).toUIImage()
+        }
+        self.collectionView!.reloadData()
         self.offset += 1
         if self.offset >= Int(originalImage.size.height/2) || self.offset >= Int(originalImage.size.width/2) {
             self.offset = 0
         }
+
     }
 
 
     // MARK: Image Generators
-    func createRGBA8Image(offset: Int) {
-        guard let originalImage = self.originalImage else { return }
-        guard var dtsImage = DTSImageRGBA8(image: originalImage) else { print("Error creating image"); return }
+    func createRGBA8Image(offset: Int) -> DTSImageRGBA8? {
+        guard let originalImage = self.originalImage else { return nil }
+        guard var dtsImage = DTSImageRGBA8(image: originalImage) else { print("Error creating image"); return nil }
         
         let red = DTSPixelRGBA8(red: 1.0, green: 0.5, blue: 0.5, alpha: 1.0)
         for y in 0..<dtsImage.height {
             dtsImage.setPixel(x: y - offset, y: y + offset, pixel: red)
         }
         
-        self.rgba8Image = dtsImage.toUIImage()
+        return dtsImage
     }
 
-    func createRGBAFImage(offset: Int) {
-        guard let originalImage = self.originalImage else { return }
-        guard var dtsImage = DTSImageRGBAF(image: originalImage) else { print("Error creating image"); return }
+    func createRGBAFImage(offset: Int) -> DTSImageRGBAF? {
+        guard let originalImage = self.originalImage else { return nil }
+        guard var dtsImage = DTSImageRGBAF(image: originalImage) else { print("Error creating image"); return nil }
         
         let blue = DTSPixelRGBAF(red: 0.2, green: 0.15, blue: 1.0, alpha: 1.0)
         
@@ -162,8 +174,27 @@ class CollectionViewController: UICollectionViewController {
             dtsImage.setPixel(x: y + offset, y: y - offset, pixel: blue)
         }
 
-        self.rgbafImage = dtsImage.toUIImage()
+        return dtsImage
+    }
 
-//        print("dtsImage: \(dtsImage)")
+    func createFloatMask(offset: Int, width: Int, height: Int) -> DTSImagePlanarF {
+        var dtsImage = DTSImagePlanarF(width: width, height: height)
+        
+        let white = DTSPixelF(1)
+        
+        for x in width/10 ..< width * 9 / 10 {
+            for y in 0..<10 {
+                dtsImage.setPixel(x: x, y: y+offset, pixel: white)
+            }
+        }
+        
+        return dtsImage
+    }
+    func createRGBAFImageWithMask(floatImage: DTSImageRGBAF, offset: Int) -> DTSImageRGBAF {
+        let mask = createFloatMask(offset: offset, width: floatImage.width, height: floatImage.height)
+        
+        let newImage = floatImage.apply(mask: mask)
+        
+        return newImage
     }
 }
