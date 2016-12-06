@@ -20,7 +20,7 @@ public struct DTSImagePlanarF: DTSImage {
         return nil
     }
     public init?(width: Int, height: Int, pixels: [Float]) {
-        guard pixels.count >= width * height * DTSImageRGBA8.numberOfComponentsPerPixel else { return nil }
+        guard pixels.count >= width * height * DTSImagePlanarF.numberOfComponentsPerPixel else { return nil }
         self.pixels = pixels
         self.width = width
         self.height = height
