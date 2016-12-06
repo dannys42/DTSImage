@@ -5,11 +5,12 @@
 [![License](https://img.shields.io/cocoapods/l/DTSImage.svg?style=flat)](http://cocoapods.org/pods/DTSImage)
 [![Platform](https://img.shields.io/cocoapods/p/DTSImage.svg?style=flat)](http://cocoapods.org/pods/DTSImage)
 
-Swift library to manage images as raw buffers
+An iOS Swift library to manage images as raw buffers.  For performance, math
+operations make use of Apple's Accelerate framework where possible.
 
 ## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+To run the example project, clone the repo, and run `pod install` from the Example/DTSImageExample directory first.
 
 ## Requirements
 
