@@ -10,5 +10,5 @@ before_install:
 - gem install cocoapods # Since Travis is not always on latest version
 - pod install --project-directory=Example/DTSImageExample
 script:
-- set -o pipefail && xcodebuild test -workspace Example/DTSImageExample/DTSImageExample.xcworkspace -scheme DTSImageExample -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- set -o pipefail && xcodebuild build test -workspace Example/DTSImageExample/DTSImageExample.xcworkspace -scheme DTSImageExample -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - pod lib lint
