@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'DTSImage'
   s.version          = '0.1.0'
-  s.summary          = 'A short description of DTSImage.'
+  s.summary          = 'iOS Swift library to manage images as raw buffers'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,9 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Swift library to manage images as raw buffers
+Swift library to manage images as raw buffers.  This library makes it easy to
+interface with Apple's Accelerate framework for performant vector and image
+processing.
 
                        DESC
 
