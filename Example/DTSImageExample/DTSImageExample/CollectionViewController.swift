@@ -193,7 +193,7 @@ class CollectionViewController: UICollectionViewController {
     func createRGBAFImageWithMask(floatImage: DTSImageRGBAF, offset: Int) -> DTSImageRGBAF {
         let mask = createFloatMask(offset: offset*2, width: floatImage.width, height: floatImage.height)
         
-        let newImage = floatImage.apply(mask: mask)
+        let newImage = floatImage.applying(mask: mask)
         
         return newImage
     }

@@ -10,14 +10,14 @@ import Foundation
 import Accelerate
 
 public extension DTSImageRGBAF {
-    /// Apply a mask to an image, generating a new image.
+    /// Generate a new image by applying a PlanarF mask to the current image
     ///
     /// The mask is applied to every component in the source image:
     ///         NewImage = self * mask
     ///
     /// - Parameter mask: Planar Float
     /// - Returns: A new image in RGBAF format
-    func apply(mask: DTSImagePlanarF) -> DTSImageRGBAF {
+    func applying(mask: DTSImagePlanarF) -> DTSImageRGBAF {
         var destImage = DTSImageRGBAF(width: self.width, height: self.height)
         
         for componentNdx in 0..<DTSImageRGBAF.numberOfComponentsPerPixel {
