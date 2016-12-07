@@ -27,7 +27,7 @@ public struct DTSImageRGBAF: DTSImage {
     }
     public init(width: Int, height: Int) {
         let totalNumberOfComponents = width * height * DTSImageRGBAF.numberOfComponentsPerPixel
-        var pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
+        let pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
         
         self.init(width: width, height: height, pixels: pixels)!
     }
@@ -45,13 +45,6 @@ public struct DTSImageRGBAF: DTSImage {
         let numTotalComponents = numPixels * 4
         
         let inBuffer = UnsafeBufferPointer(start: rgb8Image.pixels, count: numPixels).baseAddress!
-        let outBuffer = UnsafeMutableBufferPointer(start: &pixels, count: numPixels).baseAddress!
-        
-        let background8 = DTSPixelRGBA8(red: 0.1, green: 0.2, blue: 0.3, alpha: 1.0)
-        var inTestPixels = [DTSPixelRGBA8](repeating: background8, count: numPixels)
-        let inTestBuffer = UnsafeMutableBufferPointer(start: &inTestPixels, count: numPixels).baseAddress!
-
-        
         inBuffer.withMemoryRebound(to: UInt8.self, capacity: numTotalComponents) { inPixels in
             // This Results in floating point values up from 0..255
             vDSP_vfltu8(inPixels, 1, &pixels, 1, UInt(numTotalComponents))

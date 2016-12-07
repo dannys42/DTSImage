@@ -27,7 +27,7 @@ public struct DTSImagePlanarF: DTSImage {
     }
     public init(width: Int, height: Int) {
         let totalNumberOfComponents = width * height * DTSImagePlanarF.numberOfComponentsPerPixel
-        var pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
+        let pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
         
         self.init(width: width, height: height, pixels: pixels)!
     }

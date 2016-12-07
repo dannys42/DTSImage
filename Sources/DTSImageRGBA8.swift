@@ -70,7 +70,7 @@ public struct DTSImageRGBA8: DTSImage {
         let black = UInt8(0)
         var pixels = [UInt8](repeating: black, count: totalNumberOfComponents)
         let buffer = UnsafeMutableBufferPointer(start: &pixels, count: numPixels).baseAddress!
-        guard var imageContext = CGContext(data: buffer,
+        guard let imageContext = CGContext(data: buffer,
                                            width: width,
                                            height: height,
                                            bitsPerComponent: DTSImageRGBA8.numberOfBitsPerComponent,
