@@ -9,13 +9,14 @@
 import Foundation
 
 /// A single pixel represented by 4 single-precision floating point numbers for each R, G, B, A values.
-public struct DTSPixelRGBAF: DTSPixel {
+public struct DTSPixelRGBAF: DTSPixel, DTSPixelComponentArray {
+    public static var bytesPerPixel: Int = MemoryLayout<Float>.size
+
+    // MARK: Custom
     static let redOffset = 0
     static let greenOffset = 1
     static let blueOffset = 2
     static let alphaOffset = 3
-    
-    public var values: [Float]
     public var red: Float {
         get {
             return values[DTSPixelRGBAF.redOffset]
@@ -48,12 +49,22 @@ public struct DTSPixelRGBAF: DTSPixel {
             values[DTSPixelRGBAF.alphaOffset] = alpha
         }
     }
-    static public var bytesPerPixel: Int = MemoryLayout<Float>.size
-    static public var numberOfComponentsPerPixel: Int = 4
 
+    // MARK: DTSPixel Protocol
+    public init() {
+        self.init(red: 0.0, green: 0.0, blue: 0.0, alpha: 1.0)
+    }
     public init(red: Float, green: Float, blue: Float, alpha: Float) {
         self.values = [red, green, blue, alpha]
     }
+
+    // MARK: DTSPixelComponentArray Protocol
+    public static var numberOfComponentsPerPixel: Int = 4
+    public static var alphaPosition: DTSPixelComponentAlphaPosition = .last
+    public static var componentMin: Float = 0.0
+    public static var componentMax: Float = 1.0
+
+    public var values: [Float]
     public init?(components: [Float]) {
         guard components.count > 3 else { return nil }
         let alpha: Float

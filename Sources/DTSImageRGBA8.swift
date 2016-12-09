@@ -11,13 +11,17 @@ import Accelerate
 
 /// A Container to manage an image as raw 8-bit RGBA values
 public struct DTSImageRGBA8: DTSImage {
-    public var pixels: [UInt8]
-    static public var numberOfComponentsPerPixel: Int = 4
-
-    // MARK: Protocol Conformance
+    // MARK: DTSImage conformance
     public private(set) var width: Int
     public private(set) var height: Int
     
+    public init(width: Int, height: Int) {
+        let numBytes = width * height * DTSImageRGBA8.numberOfComponentsPerPixel
+        let pixels = [UInt8].init(repeating: UInt8.min, count: numBytes)
+        
+        self.init(width: width, height: height, pixels: pixels)!
+    }
+
     public func getPixel(x: Int, y:Int) throws -> DTSPixelRGBA8 {
         guard self.coordinateIsValid(x: x, y: y) else { throw DTSImageError.outOfRange }
         let offset = (y * self.width + x) * DTSPixelRGBA8.numberOfComponentsPerPixel
@@ -35,24 +39,10 @@ public struct DTSImageRGBA8: DTSImage {
         self.pixels[offset+2] = pixel.blue
         self.pixels[offset+3] = pixel.alpha
     }
-    public init?(width: Int, height: Int, pixels: [UInt8]) {
-        guard pixels.count >= width * height * DTSImageRGBA8.numberOfComponentsPerPixel else { return nil }
-        
-        self.width = width
-        self.height = height
-        self.pixels = pixels
-    }
-    public init(width: Int, height: Int) {
-        let numBytes = width * height * DTSImageRGBA8.numberOfComponentsPerPixel
-        let pixels = [UInt8].init(repeating: UInt8.min, count: numBytes)
-        
-        self.init(width: width, height: height, pixels: pixels)!
-    }
-
     
     public init?(image: UIImage) {
         guard let cgImage = image.cgImage else { return nil }
-
+        
         let width = Int(image.size.width)
         let height = Int(image.size.height)
         let numPixels = width * height
@@ -66,7 +56,7 @@ public struct DTSImageRGBA8: DTSImage {
         
         var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue
         bitmapInfo |= CGImageAlphaInfo.premultipliedLast.rawValue & CGBitmapInfo.alphaInfoMask.rawValue
-
+        
         let black = UInt8(0)
         var pixels = [UInt8](repeating: black, count: totalNumberOfComponents)
         let buffer = UnsafeMutableBufferPointer(start: &pixels, count: numPixels).baseAddress!
@@ -79,19 +69,21 @@ public struct DTSImageRGBA8: DTSImage {
                                            bitmapInfo: bitmapInfo)
             else { return nil }
         imageContext.draw(cgImage, in: CGRect(origin: CGPoint.zero, size: image.size))
-
+        
         self.pixels = pixels
     }
     public func toUIImage() -> UIImage? {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
         
+        let destBytesPerRow = self.width * DTSPixelRGBA8.bytesPerPixel
+        let destBitsPerComponent = 8
         var bitmapInfo: UInt32 = CGBitmapInfo.byteOrder32Big.rawValue
         bitmapInfo |= CGImageAlphaInfo.premultipliedLast.rawValue & CGBitmapInfo.alphaInfoMask.rawValue
         guard let imageContext = CGContext(data: nil,
                                            width: width,
                                            height: height,
-                                           bitsPerComponent: DTSImageRGBA8.numberOfBitsPerComponent,
-                                           bytesPerRow: self.numberOfBytesPerRow,
+                                           bitsPerComponent: destBitsPerComponent,
+                                           bytesPerRow: destBytesPerRow,
                                            space: colorSpace,
                                            bitmapInfo: bitmapInfo,
                                            releaseCallback: nil,
@@ -109,6 +101,37 @@ public struct DTSImageRGBA8: DTSImage {
         let image = UIImage(cgImage: cgImage)
         return image
     }
+
+    // MARK: DTSImageComponentArray conformance
+    static public var numberOfComponentsPerPixel: Int = 4
+    public var pixels: [UInt8]
+    public init?(width: Int, height: Int, pixels: [UInt8]) {
+        guard pixels.count >= width * height * DTSImageRGBA8.numberOfComponentsPerPixel else { return nil }
+        
+        self.width = width
+        self.height = height
+        self.pixels = pixels
+    }
+
+    // MARK: Custom methods
+    static public let numberOfBytesPerComponent = 1
+    static public var numberOfBitsPerComponent: Int = 8*numberOfBytesPerComponent
+    static public var numberOfBytesPerPixel: Int = DTSImageRGBA8.numberOfBytesPerComponent * DTSImageRGBA8.numberOfComponentsPerPixel
+    public var numberOfComponentsPerRow: Int {
+        get {
+            return DTSImageRGBA8.numberOfComponentsPerPixel * self.width
+        }
+    }
+    public var numberOfBytesPerRow: Int {
+        get {
+            return self.numberOfComponentsPerRow * DTSImageRGBA8.numberOfBytesPerComponent
+        }
+    }
+
+    // MARK: Protocol Conformance
+    
+
+    
     
     // MARK: Private methods
 }

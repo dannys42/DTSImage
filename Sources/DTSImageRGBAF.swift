@@ -10,21 +10,11 @@ import Foundation
 import Accelerate
 
 /// A Container to manage an image as an array of single precision floating point numbers
-public struct DTSImageRGBAF: DTSImage {
-    public var pixels: [Float]
-    static public var numberOfComponentsPerPixel: Int = 4
-
-    // MARK: Protocol Conformance
+public struct DTSImageRGBAF: DTSImage, DTSImageComponentArray {
+    // MARK: DTSImage Conformance
     public private(set) var width: Int
     public private(set) var height: Int
     
-    public init?(width: Int, height: Int, pixels: [Float]) {
-        guard pixels.count >= width * height * DTSImageRGBAF.numberOfComponentsPerPixel else { return nil }
-        
-        self.width = width
-        self.height = height
-        self.pixels = pixels
-    }
     public init(width: Int, height: Int) {
         let totalNumberOfComponents = width * height * DTSImageRGBAF.numberOfComponentsPerPixel
         let pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
@@ -111,5 +101,19 @@ public struct DTSImageRGBAF: DTSImage {
         self.pixels[offset+3] = pixel.alpha
     }
 
+    // MARK: DTSImageComponentArray conformance
+    public var pixels: [Float]
+    static public var numberOfComponentsPerPixel: Int = 4
+    
+    public init?(width: Int, height: Int, pixels: [Float]) {
+        guard pixels.count >= width * height * DTSImageRGBAF.numberOfComponentsPerPixel else { return nil }
+        
+        self.width = width
+        self.height = height
+        self.pixels = pixels
+    }
+
+    // MARK: Custom
+    
     // MARK: Private Methods
 }

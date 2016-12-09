@@ -8,8 +8,44 @@
 
 import Foundation
 
-public struct DTSPixelF: DTSPixel {
-    public var value: Float
+public struct DTSPixelF: DTSPixel, DTSPixelComponentArray {
+    // MARK: DTSPixel Conformance
+    
+    public init() {
+        self.init(0.0)
+    }
+    public init(red: Float, green: Float, blue: Float, alpha: Float) {
+        let value = max(red, green, blue, alpha)
+        self.init(value)
+    }
+    public init(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) {
+        let intVal = max(red, green, blue, alpha)
+        let value = Float(intVal) / Float(255)
+        self.init(value)
+    }
+
+    // MARK: DTSPixelComponentArray Conformance
+    public var values: [Float]
+    public static var alphaPosition: DTSPixelComponentAlphaPosition = .none
+    public static var numberOfComponentsPerPixel: Int = 1
+    public static var componentMin: Float = 0
+    public static var componentMax: Float = 1
+    
+    public init?(components: [Float]) {
+        guard components.count > 0 else { return nil }
+        self.init(components[0])
+    }
+
+    // MARK: Custom
+    
+    public var value: Float {
+        get {
+            return values[0]
+        }
+        set {
+            values[0] = newValue
+        }
+    }
     public var red: Float {
         get { return self.value }
         set { self.value = red }
@@ -27,21 +63,7 @@ public struct DTSPixelF: DTSPixel {
         set { self.value = alpha }
     }
     
-    static public var numberOfComponentsPerPixel: Int = 1
-    
     public init(_ value: Float) {
-        self.value = value
+        self.values = [ value ]
     }
-    public init(red: Float, green: Float, blue: Float, alpha: Float) {
-        self.value = max(red, green, blue, alpha)
-    }
-    public init(red: UInt8, green: UInt8, blue: UInt8, alpha: UInt8) {
-        let intVal = max(red, green, blue, alpha)
-        self.value = Float(intVal) / Float(255)
-    }
-    public init?(components: [Float]) {
-        guard components.count > 0 else { return nil }
-        self.init(components[0])
-    }
-
 }

@@ -32,7 +32,10 @@ public struct DTSPixelRGBA8: DTSPixel {
     static public var bytesPerPixel: Int = MemoryLayout<UInt32>.size
     static public var numberOfComponentsPerPixel: Int = 4
     
-    init(value: UInt32) {
+    public init() {
+        self.init(value: 0)
+    }
+    public init(value: UInt32) {
         self.value = value
     }
     public init?(components: [UInt8]) {

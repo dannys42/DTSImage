@@ -14,17 +14,12 @@ public enum DTSImageError: Error {
 
 public protocol DTSImage {
     associatedtype PixelType: DTSPixel
-    associatedtype ComponentType
 
-    /* Things you should define */
-    var pixels: [ComponentType] { get set }
-    static var numberOfComponentsPerPixel: Int { get }
 
     var width: Int { get }
     var height: Int { get }
     
     init?(image: UIImage)
-    init?(width: Int, height: Int, pixels: [ComponentType])
     init(width: Int, height: Int)
 
     func toUIImage() -> UIImage?
@@ -36,12 +31,45 @@ public protocol DTSImage {
     var numPixels: Int { get }
 }
 
-extension DTSImage {
+public protocol DTSImageComponentArray: DTSImage {
+    associatedtype ComponentType
+    associatedtype PixelType: DTSPixelComponentArray
+
+    /* Things you should define */
+    static var numberOfComponentsPerPixel: Int { get }
+
+    var pixels: [ComponentType] { get set }
+    init?(width: Int, height: Int, pixels: [ComponentType])
+}
+
+extension DTSImageComponentArray where PixelType: DTSPixelComponentArray {
+    static public var numberOfBytesPerComponent: Int {
+        get {
+            return MemoryLayout<Self.ComponentType>.size
+        }
+    }
     public func offset(x:Int, y:Int) -> Int? {
         guard self.coordinateIsValid(x: x, y: y) else { return nil }
         let offset = (y * self.width + x) * PixelType.numberOfComponentsPerPixel
-
+        
         return offset
+    }
+    
+    public var numberOfComponentsPerRow: Int {
+        get {
+            return self.width * Self.numberOfComponentsPerPixel
+        }
+    }
+    public var numberOfComponentsPerImage: Int {
+        get {
+            return self.numberOfPixelsPerImage * self.numberOfComponentsPerRow
+        }
+    }
+}
+
+extension DTSImage {
+    public init(width: Float, height: Float) {
+        self.init(width: Int(width), height: Int(height))
     }
     
     public func coordinateIsValid(x:Int, y:Int) -> Bool {
@@ -83,35 +111,5 @@ extension DTSImage {
             return self.numPixels
         }
     }
-    public var numberOfComponentsPerRow: Int {
-        get {
-            return self.width * Self.numberOfComponentsPerPixel
-        }
-    }
-    public var numberOfBytesPerRow: Int {
-        get {
-            return self.numberOfComponentsPerRow * Self.numberOfBytesPerComponent
-        }
-    }
-    public var numberOfComponentsPerImage: Int {
-        get {
-            return self.numberOfPixelsPerImage * self.numberOfComponentsPerRow
-        }
-    }
 
-    static public var numberOfBytesPerComponent: Int {
-        get {
-            return MemoryLayout<Self.ComponentType>.size
-        }
-    }
-    static public var numberOfBitsPerComponent: Int {
-        get {
-            return Self.numberOfBytesPerComponent*8
-        }
-    }
-    static public var numberOfBytesPerPixel: Int {
-        get {
-            return Self.numberOfBytesPerComponent * self.numberOfComponentsPerPixel
-        }
-    }
 }

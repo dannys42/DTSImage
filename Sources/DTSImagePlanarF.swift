@@ -8,22 +8,14 @@
 
 import Foundation
 
-public struct DTSImagePlanarF: DTSImage {
-    // MARK: Protocol Conformance
-    public var pixels: [Float]
-    static public var numberOfComponentsPerPixel: Int = 1
+public struct DTSImagePlanarF: DTSImage, DTSImageComponentArray {
+    // MARK: DTSImage Conformance
     public private(set) var width: Int
     public private(set) var height: Int
-   
+
     public init?(image: UIImage) {
         print("TBD") // TODO: Needs implementation
         return nil
-    }
-    public init?(width: Int, height: Int, pixels: [Float]) {
-        guard pixels.count >= width * height * DTSImagePlanarF.numberOfComponentsPerPixel else { return nil }
-        self.pixels = pixels
-        self.width = width
-        self.height = height
     }
     public init(width: Int, height: Int) {
         let totalNumberOfComponents = width * height * DTSImagePlanarF.numberOfComponentsPerPixel
@@ -36,7 +28,7 @@ public struct DTSImagePlanarF: DTSImage {
         print("TBD") // TODO: Needs implementation
         return nil
     }
-
+    
     public func getPixel(x: Int, y:Int) throws -> DTSPixelF {
         guard let offset = self.offset(x: x, y: y) else { throw DTSImageError.outOfRange }
         let components = [ self.pixels[offset] ]
@@ -49,5 +41,21 @@ public struct DTSImagePlanarF: DTSImage {
         
         self.pixels[offset+0] = pixel.value
     }
+
+    // MARK: DTSImageComponentArray Conformance
+    static public var numberOfComponentsPerPixel: Int = 1
+    public typealias PixelType = DTSPixelF
+    public var pixels: [Float]
+
+    public init?(width: Int, height: Int, pixels: [Float]) {
+        guard pixels.count >= width * height * DTSImagePlanarF.numberOfComponentsPerPixel else { return nil }
+        self.pixels = pixels
+        self.width = width
+        self.height = height
+    }
+
+    // MARK: Custom
+   
+    
 
 }
