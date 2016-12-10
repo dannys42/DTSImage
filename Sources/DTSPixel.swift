@@ -48,7 +48,6 @@ extension DTSPixelComponentArray {
     public init?(components: [ComponentType]) {
         let newComponents: [ComponentType]
         
-        Int.max
         switch Self.alphaPosition {
         case .none:
             newComponents = components
@@ -70,7 +69,7 @@ extension DTSPixelComponentArray {
 
         var values: [ComponentType] = []
         for n in 0..<Self.numberOfComponentsPerPixel {
-            values[n] = components[n]
+            values[n] = newComponents[n]
         }
         self.init()
         self.values = values
