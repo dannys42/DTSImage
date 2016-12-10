@@ -65,14 +65,4 @@ public struct DTSPixelRGBAF: DTSPixel, DTSPixelComponentArray {
     public static var componentMax: Float = 1.0
 
     public var values: [Float]
-    public init?(components: [Float]) {
-        guard components.count > 3 else { return nil }
-        let alpha: Float
-        if components.count > 3 {
-            alpha = components[3]
-        } else {
-            alpha = Float(1.0)
-        }
-        self.init(red: components[0], green: components[1], blue: components[2], alpha: alpha)
-    }
 }

@@ -31,11 +31,6 @@ public struct DTSPixelF: DTSPixel, DTSPixelComponentArray {
     public static var componentMin: Float = 0
     public static var componentMax: Float = 1
     
-    public init?(components: [Float]) {
-        guard components.count > 0 else { return nil }
-        self.init(components[0])
-    }
-
     // MARK: Custom
     
     public var value: Float {
