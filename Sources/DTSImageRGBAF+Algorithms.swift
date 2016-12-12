@@ -9,15 +9,17 @@
 import Foundation
 import Accelerate
 
-public extension DTSImageRGBAF {
+public extension DTSImageRGBAF {    
     /// Generate a new image by applying a PlanarF mask to the current image
     ///
     /// The mask is applied to every component in the source image:
     ///         NewImage = self * mask
     ///
+    /// The receiving image and the passed image *must* have the same dimensions.  The behavior is otherwise undefined.
+    ///
     /// - Parameter mask: Planar Float
     /// - Returns: A new image in RGBAF format
-    func applying(mask: DTSImagePlanarF) -> DTSImageRGBAF {
+    public func applying(mask: DTSImagePlanarF) -> DTSImageRGBAF {
         var destImage = DTSImageRGBAF(width: self.width, height: self.height)
         
         for componentNdx in 0..<DTSImageRGBAF.numberOfComponentsPerPixel {
@@ -36,4 +38,45 @@ public extension DTSImageRGBAF {
         }
         return destImage
     }
+    
+    /// Create new image by multiplying receiver by the passed image
+    ///
+    /// result = self * image
+    ///
+    /// - Parameter image: image contents to multiply
+    /// - Returns: A enw image in RGBAF format
+    public func multiplying(image: DTSImageRGBAF) -> DTSImageRGBAF {
+        var destImage = DTSImageRGBAF(width: self.width, height: self.height)
+        destImage.pixels.withUnsafeMutableBufferPointer{ dstBufferPtr in
+            let dstPixels = dstBufferPtr.baseAddress!
+            let length = UInt(self.numberOfComponentsPerImage)
+            
+            vDSP_vmul(self.pixels, 1, image.pixels, 1,
+                      dstPixels, 1,
+                      length)
+        }
+        
+        return destImage
+    }
+    
+    /// Creates a new image that compares the vector distance between the receiving image and the given image.
+    ///
+    /// The receiving image and the passed image *must* have the same dimensions.  The behavior is otherwise undefined.
+    ///
+    /// result = (self - image)^2
+    /// - Parameter image: an image to calculate the vector distance with
+    /// - Returns: The resulting image to create
+    public func calculatingDistanceSquared(image: DTSImageRGBAF) -> DTSImageRGBAF {
+        var destImage = DTSImageRGBAF(width: self.width, height: self.height)
+
+        destImage.pixels.withUnsafeMutableBufferPointer{ dstBufferPtr in
+            let dstPixels = dstBufferPtr.baseAddress!
+            let length = UInt(self.numberOfComponentsPerImage)
+            
+            vDSP_distancesq(self.pixels, 1, image.pixels, 1, dstPixels, length)
+        }
+
+        return destImage
+    }
 }
+

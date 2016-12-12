@@ -15,9 +15,15 @@ public struct DTSImageRGBAF: DTSImage, DTSImageComponentArray {
     public private(set) var width: Int
     public private(set) var height: Int
     
-    public init(width: Int, height: Int) {
+    public init(width: Int, height: Int, fill: DTSImageFillMethod = .black) {
         let totalNumberOfComponents = width * height * DTSImageRGBAF.numberOfComponentsPerPixel
-        let pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
+        let pixels: [Float]
+        switch fill {
+        case .black:
+            pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
+        case .white:
+            pixels = [Float].init(repeating: 1.0, count: totalNumberOfComponents)
+        }
         
         self.init(width: width, height: height, pixels: pixels)!
     }

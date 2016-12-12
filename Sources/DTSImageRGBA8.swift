@@ -15,9 +15,16 @@ public struct DTSImageRGBA8: DTSImage {
     public private(set) var width: Int
     public private(set) var height: Int
     
-    public init(width: Int, height: Int) {
+    public init(width: Int, height: Int, fill: DTSImageFillMethod) {
         let numBytes = width * height * DTSImageRGBA8.numberOfComponentsPerPixel
-        let pixels = [UInt8].init(repeating: UInt8.min, count: numBytes)
+        let pixels: [UInt8]
+        
+        switch fill {
+        case .black:
+            pixels = [UInt8].init(repeating: UInt8.min, count: numBytes)
+        case .white:
+            pixels = [UInt8].init(repeating: UInt8.max, count: numBytes)
+        }
         
         self.init(width: width, height: height, pixels: pixels)!
     }

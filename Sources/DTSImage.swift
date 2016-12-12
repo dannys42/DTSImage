@@ -12,6 +12,11 @@ public enum DTSImageError: Error {
     case outOfRange
 }
 
+public enum DTSImageFillMethod {
+    case black
+    case white
+}
+
 public protocol DTSImage {
     associatedtype PixelType: DTSPixel
 
@@ -20,7 +25,7 @@ public protocol DTSImage {
     var height: Int { get }
     
     init?(image: UIImage)
-    init(width: Int, height: Int)
+    init(width: Int, height: Int, fill: DTSImageFillMethod)
 
     func toUIImage() -> UIImage?
     func getPixel(x: Int, y:Int) throws -> PixelType
@@ -65,11 +70,44 @@ extension DTSImageComponentArray where PixelType: DTSPixelComponentArray {
             return self.numberOfPixelsPerImage * self.numberOfComponentsPerRow
         }
     }
+    
+    /// Get a pointer to the pixel components start at the given row.
+    ///
+    /// Note: The block is not executed if the row given is out of range.
+    ///
+    /// - Parameters:
+    ///   - row: must be between 0..<height
+    ///   - block: Block to execute with the pointer
+    public func withUnsafePointerToComponents(atRow row: Int, block: ((UnsafePointer<ComponentType>) -> Void)) {
+        guard row >= 0 && row < self.height else { return }
+        let offset = row * self.numberOfComponentsPerRow
+        self.pixels.withUnsafeBufferPointer { bufferPtr in
+            let pixelsAtRow = bufferPtr.baseAddress!.advanced(by: offset)
+            
+            block(pixelsAtRow)
+        }
+    }
+    /// Get a mutable pointer to the pixel components start at the given row.
+    ///
+    /// Note: The block is not executed if the row given is out of range.
+    ///
+    /// - Parameters:
+    ///   - row: must be between 0..<height
+    ///   - block: Block to execute with the pointer
+    public mutating func withUnsafeMutablePointerToComponents(atRow row: Int, block: ((UnsafeMutablePointer<ComponentType>) -> Void)) {
+        guard row >= 0 && row < self.height else { return }
+        let offset = row * self.numberOfComponentsPerRow
+        self.pixels.withUnsafeMutableBufferPointer { bufferPtr in
+            let pixelsAtRow = bufferPtr.baseAddress!.advanced(by: offset)
+            
+            block(pixelsAtRow)
+        }
+    }
 }
 
 extension DTSImage {
-    public init(width: Float, height: Float) {
-        self.init(width: Int(width), height: Int(height))
+    public init(width: Float, height: Float, fill: DTSImageFillMethod) {
+        self.init(width: Int(width), height: Int(height), fill: fill)
     }
     
     public func coordinateIsValid(x:Int, y:Int) -> Bool {
