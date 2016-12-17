@@ -78,5 +78,42 @@ public extension DTSImageRGBAF {
 
         return destImage
     }
-}
+    
+    /// Subtract the current image with contents of passed image
+    ///
+    /// Note: result = self - image
+    ///
+    /// - Parameter image: Image contents to subtract
+    /// - Returns: resulting image
+    public func subtracting(image: DTSImageRGBAF) -> DTSImageRGBAF {
+        var destImage = DTSImageRGBAF(width: self.width, height: self.height)
+                
+        let minLength = min(self.numberOfComponentsPerImage, image.numberOfComponentsPerImage)
+        let length = UInt(minLength)
+        self.withUnsafePointerToComponents { inPixelsA in
+            image.withUnsafePointerToComponents { inPixelsB in
+                destImage.withUnsafeMutablePointerToComponents { dstPixels in
+                    vDSP_vsub(inPixelsB, 1,
+                              inPixelsA, 1,
+                              dstPixels, 1,
+                              length)
+                }
+            }
+        }
+        
+        return destImage
+    }
+    
 
+    /// Inverts the value of each component in an image.
+    ///
+    /// Note: result = 1.0 - self
+    ///
+    /// - Returns: Resulting image
+    public func invertingValue() -> DTSImageRGBAF {
+        let oneImage = DTSImageRGBAF(width: self.width, height: self.height, fill: .white)
+        let dstImage = self.subtracting(image: oneImage)
+        return dstImage
+    }
+
+}

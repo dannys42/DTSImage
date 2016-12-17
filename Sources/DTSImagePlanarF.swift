@@ -26,6 +26,8 @@ public struct DTSImagePlanarF: DTSImage, DTSImageComponentArray {
             pixels = [Float].init(repeating: 0.0, count: totalNumberOfComponents)
         case .white:
             pixels = [Float].init(repeating: 1.0, count: totalNumberOfComponents)
+        case .value(let val):
+            pixels = [Float].init(repeating: val, count: totalNumberOfComponents)
         }
         
         self.init(width: width, height: height, pixels: pixels)!

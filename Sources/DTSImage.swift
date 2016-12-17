@@ -15,6 +15,7 @@ public enum DTSImageError: Error {
 public enum DTSImageFillMethod {
     case black
     case white
+    case value(Float)
 }
 
 public protocol DTSImage {
@@ -67,7 +68,7 @@ extension DTSImageComponentArray where PixelType: DTSPixelComponentArray {
     }
     public var numberOfComponentsPerImage: Int {
         get {
-            return self.numberOfPixelsPerImage * self.numberOfComponentsPerRow
+            return self.numberOfPixelsPerImage * Self.numberOfComponentsPerPixel
         }
     }
     
@@ -78,7 +79,7 @@ extension DTSImageComponentArray where PixelType: DTSPixelComponentArray {
     /// - Parameters:
     ///   - row: must be between 0..<height
     ///   - block: Block to execute with the pointer
-    public func withUnsafePointerToComponents(atRow row: Int, block: ((UnsafePointer<ComponentType>) -> Void)) {
+    public func withUnsafePointerToComponents(atRow row: Int = 0, block: ((UnsafePointer<ComponentType>) -> Void)) {
         guard row >= 0 && row < self.height else { return }
         let offset = row * self.numberOfComponentsPerRow
         self.pixels.withUnsafeBufferPointer { bufferPtr in
@@ -94,7 +95,7 @@ extension DTSImageComponentArray where PixelType: DTSPixelComponentArray {
     /// - Parameters:
     ///   - row: must be between 0..<height
     ///   - block: Block to execute with the pointer
-    public mutating func withUnsafeMutablePointerToComponents(atRow row: Int, block: ((UnsafeMutablePointer<ComponentType>) -> Void)) {
+    public mutating func withUnsafeMutablePointerToComponents(atRow row: Int = 0, block: ((UnsafeMutablePointer<ComponentType>) -> Void)) {
         guard row >= 0 && row < self.height else { return }
         let offset = row * self.numberOfComponentsPerRow
         self.pixels.withUnsafeMutableBufferPointer { bufferPtr in

@@ -24,6 +24,8 @@ public struct DTSImageRGBA8: DTSImage {
             pixels = [UInt8].init(repeating: UInt8.min, count: numBytes)
         case .white:
             pixels = [UInt8].init(repeating: UInt8.max, count: numBytes)
+        case .value(let val):
+            pixels = [UInt8].init(repeating: UInt8(val), count: numBytes)
         }
         
         self.init(width: width, height: height, pixels: pixels)!
