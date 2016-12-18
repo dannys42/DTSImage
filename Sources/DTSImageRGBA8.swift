@@ -49,11 +49,13 @@ public struct DTSImageRGBA8: DTSImage {
         self.pixels[offset+3] = pixel.alpha
     }
     
-    public init?(image: UIImage) {
+    public init?(image: UIImage, scaleFactor: Float) {
         guard let cgImage = image.cgImage else { return nil }
-        
-        let width = Int(image.size.width)
-        let height = Int(image.size.height)
+        let outSize = CGSize(width: image.size.width * CGFloat(scaleFactor),
+                             height: image.size.height * CGFloat(scaleFactor))
+
+        let width = Int(outSize.width)
+        let height = Int(outSize.height)
         let numPixels = width * height
         let numComponentsPerPixel = DTSImageRGBA8.numberOfComponentsPerPixel
         let totalNumberOfComponents = numPixels * numComponentsPerPixel
@@ -77,7 +79,8 @@ public struct DTSImageRGBA8: DTSImage {
                                            space: colorSpace,
                                            bitmapInfo: bitmapInfo)
             else { return nil }
-        imageContext.draw(cgImage, in: CGRect(origin: CGPoint.zero, size: image.size))
+        
+        imageContext.draw(cgImage, in: CGRect(origin: CGPoint.zero, size: outSize))
         
         self.pixels = pixels
     }

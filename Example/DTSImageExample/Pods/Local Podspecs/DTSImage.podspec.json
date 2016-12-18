@@ -1,8 +1,8 @@
 {
   "name": "DTSImage",
   "version": "0.1.0",
-  "summary": "A short description of DTSImage.",
-  "description": "Swift library to manage images as raw buffers",
+  "summary": "iOS Swift library to manage images as raw buffers",
+  "description": "Swift library to manage images as raw buffers.  This library makes it easy to\ninterface with Apple's Accelerate framework for performant vector and image\nprocessing.",
   "homepage": "https://github.com/dannys42/DTSImage",
   "license": {
     "type": "MIT",

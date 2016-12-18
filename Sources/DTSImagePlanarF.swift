@@ -13,7 +13,7 @@ public struct DTSImagePlanarF: DTSImage, DTSImageComponentArray {
     public private(set) var width: Int
     public private(set) var height: Int
 
-    public init?(image: UIImage) {
+    public init?(image: UIImage, scaleFactor: Float) {
         print("TBD") // TODO: Needs implementation
         return nil
     }

@@ -7,28 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0839FE9C720CAE7C45D1146229857999 /* DTSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAB7F4FF01C331A72D24882D391F7356 /* DTSImage.swift */; };
 		089C64786982F082AFEA8D4FF1C6A66E /* Pods-DTSImageExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AA0599039E323254595BAB1A11EC2414 /* Pods-DTSImageExample-dummy.m */; };
-		14ABD54F1DF4DD8E001626E4 /* DTSImagePlanarF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABD54E1DF4DD8E001626E4 /* DTSImagePlanarF.swift */; };
-		14ABD5511DF4E118001626E4 /* DTSPixelF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABD5501DF4E118001626E4 /* DTSPixelF.swift */; };
-		14ABD5531DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14ABD5521DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift */; };
-		153FE7F409FBD30967183BE13DF06887 /* DTSImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C3B449E719CC55F8569B9280A78AFC9 /* DTSImage-dummy.m */; };
+		121610855022BBB114BBB680EF11687C /* DTSPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0CF297B0A44F2268610A4616E41311 /* DTSPixel.swift */; };
+		3080CEACA4080EFEF34EF769AACEC439 /* DTSImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FA3504602C13E3856ED6F2CE1DB4FC /* DTSImage.swift */; };
 		34910F3AA27081AD38E0C711EA359045 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */; };
 		3C4EF611A7378C340599B6866B41FABC /* Pods-DTSImageExampleUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 38850EA9D156CEEB579655B03BB7400B /* Pods-DTSImageExampleUITests-dummy.m */; };
-		3D1CE401034F4B668BF042AB21E06A77 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129B5E55ED3BE541B3093836DB54BEFA /* Accelerate.framework */; };
-		5AF6DC94DCC4568A9CA73077A7F2B31F /* DTSPixel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70532B827D463D6F0DE55BDDD905F5B3 /* DTSPixel.swift */; };
-		608E39D93A11A5E783C1B2814E56AF4E /* DTSPixelRGBA8.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D70071E358116A086DED729B816F38 /* DTSPixelRGBA8.swift */; };
+		6050B0013EA7A72ACFFB4795B0587506 /* DTSPixelF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284629F0AFD10D07F5D46E0D055EF97B /* DTSPixelF.swift */; };
 		60DB39F3DF21B3DED3976383065E3BF1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */; };
+		6767BE68DAA11CDAEA49889A90FE9F91 /* DTSImageRGBAF+Algorithms.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E53ACD5C9272FDE06D2D80FBB7BA53 /* DTSImageRGBAF+Algorithms.swift */; };
+		680717DBC874557C4791202EDE9909F3 /* DTSImage-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FCB149A529356C133E856F2C17CC3277 /* DTSImage-dummy.m */; };
+		6852CEAA731E32ABBE51D9DA6074464C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */; };
+		7D54A694C1B004A06EFB990041E706C6 /* DTSImageRGBAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D485D81C77DCA48F29E3F6320590AE9 /* DTSImageRGBAF.swift */; };
 		94B85447E969FB0112B39EA63743FCA4 /* Pods-DTSImageExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDC60C14D366DABEC9D12FBF2CDE06EA /* Pods-DTSImageExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A57F9B615A5E9C6087863D8A8FC35C12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */; };
+		9CC1BFF83FB9A53EE4E6F67CAF3AFC81 /* DTSImagePlanarF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62C471CAB3E3D48A5B7263358F7085A3 /* DTSImagePlanarF.swift */; };
 		A5DBDE19EE339047D7801744BE19FF91 /* Pods-DTSImageExampleUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C7F487B91490111A325076FB5E045D6 /* Pods-DTSImageExampleUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A7B391CF7A792CA5FE6230C533E3C158 /* Pods-DTSImageExampleTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6011F7081DB8087A71EBDE4DA7BE2846 /* Pods-DTSImageExampleTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C7CF144A0CF376A74925A91E2C0D8C4E /* DTSPixelRGBA8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7624A61E466B4BD42BDBA3ED85B09EE1 /* DTSPixelRGBA8.swift */; };
+		CBF4323FB71523ECAA2789B5CF653398 /* DTSPixelRGBAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DA1A9411276AE4623E761765488278 /* DTSPixelRGBAF.swift */; };
 		D3FBFF0FE15834B0E3F78CB778927CB5 /* Pods-DTSImageExampleTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10E949F24E6E6F434A2DF9E3BAFD0D71 /* Pods-DTSImageExampleTests-dummy.m */; };
+		D42A1B3A2CEEE1E49681629AC7C97D12 /* DTSImageRGBA8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EF303FF87F15C3C1064905E8F3AB79 /* DTSImageRGBA8.swift */; };
 		D6868E907BD410EB1BE500B08B5313D2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */; };
-		E18423C492A579E811FB2E91C3420FD1 /* DTSImageRGBA8.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E57E1CCED8E958A0D3C6E6982B19204 /* DTSImageRGBA8.swift */; };
-		E62070707F65095C044E8760EE38A6B3 /* DTSImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0135F75D683E56C6E3B44F7046812D42 /* DTSImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F0A8665CFFECE560CA024AC7FD78FFB0 /* DTSPixelRGBAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48AF40D41154D5138EB20DC26CCA474B /* DTSPixelRGBAF.swift */; };
-		FD620A66A012ED3D00AAEDEAF21DC3B3 /* DTSImageRGBAF.swift in Sources */ = {isa = PBXBuildFile; fileRef = F997E17F7CD742E278852BE2C05AA48E /* DTSImageRGBAF.swift */; };
+		E4B69BEA3ADD0CA2E3672B4E326BA592 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129B5E55ED3BE541B3093836DB54BEFA /* Accelerate.framework */; };
+		EE3CDD3D1F0563E93119605979AD145E /* DTSImage-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 71A612C6BB236060D1BB4AFC1673F5C1 /* DTSImage-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,63 +36,63 @@
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = B0DC07BAAD1D7815233646F1E2B69825;
+			remoteGlobalIDString = 276B1E68C7CEEAD5E7E0E82CD05EF2B4;
 			remoteInfo = DTSImage;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0135F75D683E56C6E3B44F7046812D42 /* DTSImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTSImage-umbrella.h"; sourceTree = "<group>"; };
 		02229241C0F1CF04FC796363D5B5C1D4 /* Pods-DTSImageExampleUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DTSImageExampleUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		07206013874D49E68E12B45DE6CBFCE9 /* Pods_DTSImageExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTSImageExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		07206013874D49E68E12B45DE6CBFCE9 /* Pods_DTSImageExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DTSImageExample.framework; path = "Pods-DTSImageExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		10E949F24E6E6F434A2DF9E3BAFD0D71 /* Pods-DTSImageExampleTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DTSImageExampleTests-dummy.m"; sourceTree = "<group>"; };
 		129B5E55ED3BE541B3093836DB54BEFA /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Accelerate.framework; sourceTree = DEVELOPER_DIR; };
-		148C715B43EB0090FF47BBDB17F1CE0C /* Pods_DTSImageExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTSImageExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14ABD54E1DF4DD8E001626E4 /* DTSImagePlanarF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSImagePlanarF.swift; sourceTree = "<group>"; };
-		14ABD5501DF4E118001626E4 /* DTSPixelF.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DTSPixelF.swift; sourceTree = "<group>"; };
-		14ABD5521DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DTSImageRGBAF+Algorithms.swift"; sourceTree = "<group>"; };
-		172F200325B7F069434B8E0431A28321 /* DTSImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DTSImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		148C715B43EB0090FF47BBDB17F1CE0C /* Pods_DTSImageExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DTSImageExampleTests.framework; path = "Pods-DTSImageExampleTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		172F200325B7F069434B8E0431A28321 /* DTSImage.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DTSImage.framework; path = DTSImage.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C7F487B91490111A325076FB5E045D6 /* Pods-DTSImageExampleUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DTSImageExampleUITests-umbrella.h"; sourceTree = "<group>"; };
-		1E57E1CCED8E958A0D3C6E6982B19204 /* DTSImageRGBA8.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImageRGBA8.swift; sourceTree = "<group>"; };
-		1F7F30ED9BCFE099AEFCFBF269FF9635 /* Pods-DTSImageExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DTSImageExampleUITests.modulemap"; sourceTree = "<group>"; };
+		1F7F30ED9BCFE099AEFCFBF269FF9635 /* Pods-DTSImageExampleUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DTSImageExampleUITests.modulemap"; sourceTree = "<group>"; };
+		26E53ACD5C9272FDE06D2D80FBB7BA53 /* DTSImageRGBAF+Algorithms.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = "DTSImageRGBAF+Algorithms.swift"; sourceTree = "<group>"; };
+		284629F0AFD10D07F5D46E0D055EF97B /* DTSPixelF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixelF.swift; sourceTree = "<group>"; };
 		32F3E6C3D140CDF51360D93D25960FAB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		34FA3504602C13E3856ED6F2CE1DB4FC /* DTSImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImage.swift; sourceTree = "<group>"; };
 		3581FDE2EDF45F4B9C7435F647797D2F /* Pods-DTSImageExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTSImageExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 		38850EA9D156CEEB579655B03BB7400B /* Pods-DTSImageExampleUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DTSImageExampleUITests-dummy.m"; sourceTree = "<group>"; };
 		39AAFDC395705E58BD4C76D8DE71B123 /* Pods-DTSImageExampleUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DTSImageExampleUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		3AD64FF214294F86EC42F7ED07345E6B /* Pods-DTSImageExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTSImageExample-frameworks.sh"; sourceTree = "<group>"; };
-		48AF40D41154D5138EB20DC26CCA474B /* DTSPixelRGBAF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixelRGBAF.swift; sourceTree = "<group>"; };
 		4ABD411ED3EADC2B514655E0975359C9 /* Pods-DTSImageExampleUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTSImageExampleUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		4B4FE7270966DA2B625F83FE8C7C28B2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4BCDF582152741541048542A96D9698D /* Pods-DTSImageExampleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DTSImageExampleTests.modulemap"; sourceTree = "<group>"; };
-		50955B5C3BB8F11612FEFBA9E6E7FD99 /* DTSImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DTSImage.xcconfig; sourceTree = "<group>"; };
+		4BCDF582152741541048542A96D9698D /* Pods-DTSImageExampleTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DTSImageExampleTests.modulemap"; sourceTree = "<group>"; };
+		51EF303FF87F15C3C1064905E8F3AB79 /* DTSImageRGBA8.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImageRGBA8.swift; sourceTree = "<group>"; };
 		5372DB666C381643F91637BB178DAE18 /* Pods-DTSImageExampleTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DTSImageExampleTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		572A0FE663408B53A9E9504969212036 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5ACE30BB58E37CF274138E40B005C2D1 /* Pods_DTSImageExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DTSImageExampleUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C3B449E719CC55F8569B9280A78AFC9 /* DTSImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DTSImage-dummy.m"; sourceTree = "<group>"; };
+		5ABC0E912DBF84ACD3B8A04ED5E07E93 /* DTSImage.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DTSImage.xcconfig; sourceTree = "<group>"; };
+		5ACE30BB58E37CF274138E40B005C2D1 /* Pods_DTSImageExampleUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_DTSImageExampleUITests.framework; path = "Pods-DTSImageExampleUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5E0CF297B0A44F2268610A4616E41311 /* DTSPixel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixel.swift; sourceTree = "<group>"; };
 		6011F7081DB8087A71EBDE4DA7BE2846 /* Pods-DTSImageExampleTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DTSImageExampleTests-umbrella.h"; sourceTree = "<group>"; };
-		646FCC2416F7AF5C6FA7595A3FA3E34B /* Pods-DTSImageExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-DTSImageExample.modulemap"; sourceTree = "<group>"; };
-		70532B827D463D6F0DE55BDDD905F5B3 /* DTSPixel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixel.swift; sourceTree = "<group>"; };
+		62C471CAB3E3D48A5B7263358F7085A3 /* DTSImagePlanarF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImagePlanarF.swift; sourceTree = "<group>"; };
+		646FCC2416F7AF5C6FA7595A3FA3E34B /* Pods-DTSImageExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-DTSImageExample.modulemap"; sourceTree = "<group>"; };
+		717C54C47D8A61BE1533BFC5044C9ACB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71A612C6BB236060D1BB4AFC1673F5C1 /* DTSImage-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTSImage-umbrella.h"; sourceTree = "<group>"; };
+		7624A61E466B4BD42BDBA3ED85B09EE1 /* DTSPixelRGBA8.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixelRGBA8.swift; sourceTree = "<group>"; };
 		77FA8D3C3A154F3313F331CC8CFB7962 /* Pods-DTSImageExampleTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTSImageExampleTests-resources.sh"; sourceTree = "<group>"; };
 		7D0B0FF575921B6BDF4CAD518BD60EB8 /* Pods-DTSImageExampleTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTSImageExampleTests-frameworks.sh"; sourceTree = "<group>"; };
 		7D4DB6578D89AC3F8A1E6BB3773F314A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		82256F39421AC8866C69B72EF982169D /* DTSImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = DTSImage.modulemap; sourceTree = "<group>"; };
 		88E9994207BC157160A1B09BACC26013 /* Pods-DTSImageExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DTSImageExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8C6F835DDD35293FFF6CC63AF6E200AB /* Pods-DTSImageExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-DTSImageExample-acknowledgements.plist"; sourceTree = "<group>"; };
 		91AACE69D804C92983687302278C07F5 /* Pods-DTSImageExampleUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTSImageExampleUITests-resources.sh"; sourceTree = "<group>"; };
 		93509FBE36793B78F7B7FEA32B082BDF /* Pods-DTSImageExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTSImageExample.debug.xcconfig"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D485D81C77DCA48F29E3F6320590AE9 /* DTSImageRGBAF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImageRGBAF.swift; sourceTree = "<group>"; };
+		A3DA1A9411276AE4623E761765488278 /* DTSPixelRGBAF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixelRGBAF.swift; sourceTree = "<group>"; };
 		AA0599039E323254595BAB1A11EC2414 /* Pods-DTSImageExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-DTSImageExample-dummy.m"; sourceTree = "<group>"; };
-		AD10B23A08764C5008A644B13D48A4C1 /* DTSImage.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DTSImage.modulemap; sourceTree = "<group>"; };
-		B4D70071E358116A086DED729B816F38 /* DTSPixelRGBA8.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSPixelRGBA8.swift; sourceTree = "<group>"; };
 		B59D94D529632262FAD58E75041CF48C /* Pods-DTSImageExampleUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTSImageExampleUITests.release.xcconfig"; sourceTree = "<group>"; };
-		C579595225AA180087877F15DC75D7B5 /* DTSImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTSImage-prefix.pch"; sourceTree = "<group>"; };
+		C141F7C0861D121B7177ADE6854CC0F4 /* DTSImage-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DTSImage-prefix.pch"; sourceTree = "<group>"; };
 		CBF1846BF3FC9B8A051149602D0EF50D /* Pods-DTSImageExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTSImageExample-resources.sh"; sourceTree = "<group>"; };
 		CDC60C14D366DABEC9D12FBF2CDE06EA /* Pods-DTSImageExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-DTSImageExample-umbrella.h"; sourceTree = "<group>"; };
 		DD1216321B950B2147F7FC283D04D811 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		EAB7F4FF01C331A72D24882D391F7356 /* DTSImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImage.swift; sourceTree = "<group>"; };
 		EB4A467E8185FF758C4C873EC9F91F98 /* Pods-DTSImageExampleTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-DTSImageExampleTests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		F2F66D3135B977DE44C6E4A01ED01CB4 /* Pods-DTSImageExampleUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-DTSImageExampleUITests-frameworks.sh"; sourceTree = "<group>"; };
-		F997E17F7CD742E278852BE2C05AA48E /* DTSImageRGBAF.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = DTSImageRGBAF.swift; sourceTree = "<group>"; };
 		FBCCF8146A286C2B095F7695D8E6D86B /* Pods-DTSImageExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTSImageExampleTests.release.xcconfig"; sourceTree = "<group>"; };
+		FCB149A529356C133E856F2C17CC3277 /* DTSImage-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DTSImage-dummy.m"; sourceTree = "<group>"; };
 		FD815A8207273335C1C77EFD520F8B10 /* Pods-DTSImageExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-DTSImageExample.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -113,20 +113,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		98F1311DA7A7F72339F6BAA7550251A8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4B69BEA3ADD0CA2E3672B4E326BA592 /* Accelerate.framework in Frameworks */,
+				6852CEAA731E32ABBE51D9DA6074464C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B0D4D3EE8090C0492D71470E253752B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				60DB39F3DF21B3DED3976383065E3BF1 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DEFA79BDCAF4D4F37A00ED0A565F2290 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3D1CE401034F4B668BF042AB21E06A77 /* Accelerate.framework in Frameworks */,
-				A57F9B615A5E9C6087863D8A8FC35C12 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +136,7 @@
 		0958C6E67D58A5D8B057216EEB78E17A /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A7A8CC2B99E82281AC840A6262FDADFA /* DTSImage */,
+				2B6687F5B551DCE995ECEC76C44E4A15 /* DTSImage */,
 			);
 			name = "Development Pods";
 			sourceTree = "<group>";
@@ -169,18 +169,14 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		1A72852A2FFAAAC6743E51373BE40DDB /* Support Files */ = {
+		2B6687F5B551DCE995ECEC76C44E4A15 /* DTSImage */ = {
 			isa = PBXGroup;
 			children = (
-				AD10B23A08764C5008A644B13D48A4C1 /* DTSImage.modulemap */,
-				50955B5C3BB8F11612FEFBA9E6E7FD99 /* DTSImage.xcconfig */,
-				5C3B449E719CC55F8569B9280A78AFC9 /* DTSImage-dummy.m */,
-				C579595225AA180087877F15DC75D7B5 /* DTSImage-prefix.pch */,
-				0135F75D683E56C6E3B44F7046812D42 /* DTSImage-umbrella.h */,
-				4B4FE7270966DA2B625F83FE8C7C28B2 /* Info.plist */,
+				AC26B659B459EC7EA55D67A67C7D64E5 /* Sources */,
+				E95E438465F5921ECB26C838B9BAD1D4 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "Example/DTSImageExample/Pods/Target Support Files/DTSImage";
+			name = DTSImage;
+			path = ../../..;
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -231,22 +227,6 @@
 			);
 			sourceTree = "<group>";
 		};
-		865AA7858F76C67678C4C9F34EE374C0 /* Sources */ = {
-			isa = PBXGroup;
-			children = (
-				EAB7F4FF01C331A72D24882D391F7356 /* DTSImage.swift */,
-				14ABD54E1DF4DD8E001626E4 /* DTSImagePlanarF.swift */,
-				1E57E1CCED8E958A0D3C6E6982B19204 /* DTSImageRGBA8.swift */,
-				F997E17F7CD742E278852BE2C05AA48E /* DTSImageRGBAF.swift */,
-				14ABD5521DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift */,
-				70532B827D463D6F0DE55BDDD905F5B3 /* DTSPixel.swift */,
-				B4D70071E358116A086DED729B816F38 /* DTSPixelRGBA8.swift */,
-				48AF40D41154D5138EB20DC26CCA474B /* DTSPixelRGBAF.swift */,
-				14ABD5501DF4E118001626E4 /* DTSPixelF.swift */,
-			);
-			path = Sources;
-			sourceTree = "<group>";
-		};
 		A189EFB978ECB0925133C451CFB73F27 /* Pods-DTSImageExample */ = {
 			isa = PBXGroup;
 			children = (
@@ -265,14 +245,21 @@
 			path = "Target Support Files/Pods-DTSImageExample";
 			sourceTree = "<group>";
 		};
-		A7A8CC2B99E82281AC840A6262FDADFA /* DTSImage */ = {
+		AC26B659B459EC7EA55D67A67C7D64E5 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				865AA7858F76C67678C4C9F34EE374C0 /* Sources */,
-				1A72852A2FFAAAC6743E51373BE40DDB /* Support Files */,
+				34FA3504602C13E3856ED6F2CE1DB4FC /* DTSImage.swift */,
+				62C471CAB3E3D48A5B7263358F7085A3 /* DTSImagePlanarF.swift */,
+				51EF303FF87F15C3C1064905E8F3AB79 /* DTSImageRGBA8.swift */,
+				9D485D81C77DCA48F29E3F6320590AE9 /* DTSImageRGBAF.swift */,
+				26E53ACD5C9272FDE06D2D80FBB7BA53 /* DTSImageRGBAF+Algorithms.swift */,
+				5E0CF297B0A44F2268610A4616E41311 /* DTSPixel.swift */,
+				284629F0AFD10D07F5D46E0D055EF97B /* DTSPixelF.swift */,
+				7624A61E466B4BD42BDBA3ED85B09EE1 /* DTSPixelRGBA8.swift */,
+				A3DA1A9411276AE4623E761765488278 /* DTSPixelRGBAF.swift */,
 			);
-			name = DTSImage;
-			path = ../../..;
+			name = Sources;
+			path = Sources;
 			sourceTree = "<group>";
 		};
 		CDAA352B84660572EDB15E0216007F4A /* iOS */ = {
@@ -284,17 +271,23 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		E95E438465F5921ECB26C838B9BAD1D4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				82256F39421AC8866C69B72EF982169D /* DTSImage.modulemap */,
+				5ABC0E912DBF84ACD3B8A04ED5E07E93 /* DTSImage.xcconfig */,
+				FCB149A529356C133E856F2C17CC3277 /* DTSImage-dummy.m */,
+				C141F7C0861D121B7177ADE6854CC0F4 /* DTSImage-prefix.pch */,
+				71A612C6BB236060D1BB4AFC1673F5C1 /* DTSImage-umbrella.h */,
+				717C54C47D8A61BE1533BFC5044C9ACB /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "Example/DTSImageExample/Pods/Target Support Files/DTSImage";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3F9CC772C1BFA86087993081F1881176 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E62070707F65095C044E8760EE38A6B3 /* DTSImage-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		740B7148669DAC670C04BE32BB379B4E /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +312,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FED0FBD09F7D8B0F3B80080211119DAE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EE3CDD3D1F0563E93119605979AD145E /* DTSImage-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
@@ -340,6 +341,23 @@
 			productReference = 07206013874D49E68E12B45DE6CBFCE9 /* Pods_DTSImageExample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		276B1E68C7CEEAD5E7E0E82CD05EF2B4 /* DTSImage */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 682636A3056DD389D1C3E633FCAB1E46 /* Build configuration list for PBXNativeTarget "DTSImage" */;
+			buildPhases = (
+				BB6B4AEF9B772DFFBC7B17D468207D2B /* Sources */,
+				98F1311DA7A7F72339F6BAA7550251A8 /* Frameworks */,
+				FED0FBD09F7D8B0F3B80080211119DAE /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DTSImage;
+			productName = DTSImage;
+			productReference = 172F200325B7F069434B8E0431A28321 /* DTSImage.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		3B6ED6BA6C8D16D2A7A8F73370C1721A /* Pods-DTSImageExampleUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F262A290D272463D9CD7ECAC468FA9A /* Build configuration list for PBXNativeTarget "Pods-DTSImageExampleUITests" */;
@@ -355,23 +373,6 @@
 			name = "Pods-DTSImageExampleUITests";
 			productName = "Pods-DTSImageExampleUITests";
 			productReference = 5ACE30BB58E37CF274138E40B005C2D1 /* Pods_DTSImageExampleUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B0DC07BAAD1D7815233646F1E2B69825 /* DTSImage */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 65D87FC13ABD80B8963C454E375E7C0A /* Build configuration list for PBXNativeTarget "DTSImage" */;
-			buildPhases = (
-				3B2D35F019C02C16A19603A8360E1E3C /* Sources */,
-				DEFA79BDCAF4D4F37A00ED0A565F2290 /* Frameworks */,
-				3F9CC772C1BFA86087993081F1881176 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DTSImage;
-			productName = DTSImage;
-			productReference = 172F200325B7F069434B8E0431A28321 /* DTSImage.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		EF45BAC5258BD7E0E9764FA27DDE4616 /* Pods-DTSImageExampleTests */ = {
@@ -412,7 +413,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B0DC07BAAD1D7815233646F1E2B69825 /* DTSImage */,
+				276B1E68C7CEEAD5E7E0E82CD05EF2B4 /* DTSImage */,
 				119524EF4D1A969BED731C45B5500503 /* Pods-DTSImageExample */,
 				EF45BAC5258BD7E0E9764FA27DDE4616 /* Pods-DTSImageExampleTests */,
 				3B6ED6BA6C8D16D2A7A8F73370C1721A /* Pods-DTSImageExampleUITests */,
@@ -421,23 +422,6 @@
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3B2D35F019C02C16A19603A8360E1E3C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				153FE7F409FBD30967183BE13DF06887 /* DTSImage-dummy.m in Sources */,
-				0839FE9C720CAE7C45D1146229857999 /* DTSImage.swift in Sources */,
-				14ABD5511DF4E118001626E4 /* DTSPixelF.swift in Sources */,
-				14ABD54F1DF4DD8E001626E4 /* DTSImagePlanarF.swift in Sources */,
-				14ABD5531DF531F5001626E4 /* DTSImageRGBAF+Algorithms.swift in Sources */,
-				E18423C492A579E811FB2E91C3420FD1 /* DTSImageRGBA8.swift in Sources */,
-				FD620A66A012ED3D00AAEDEAF21DC3B3 /* DTSImageRGBAF.swift in Sources */,
-				5AF6DC94DCC4568A9CA73077A7F2B31F /* DTSPixel.swift in Sources */,
-				608E39D93A11A5E783C1B2814E56AF4E /* DTSPixelRGBA8.swift in Sources */,
-				F0A8665CFFECE560CA024AC7FD78FFB0 /* DTSPixelRGBAF.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4D0F73078551C4D384664BEB5F47D6F5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -462,18 +446,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BB6B4AEF9B772DFFBC7B17D468207D2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				680717DBC874557C4791202EDE9909F3 /* DTSImage-dummy.m in Sources */,
+				3080CEACA4080EFEF34EF769AACEC439 /* DTSImage.swift in Sources */,
+				9CC1BFF83FB9A53EE4E6F67CAF3AFC81 /* DTSImagePlanarF.swift in Sources */,
+				D42A1B3A2CEEE1E49681629AC7C97D12 /* DTSImageRGBA8.swift in Sources */,
+				6767BE68DAA11CDAEA49889A90FE9F91 /* DTSImageRGBAF+Algorithms.swift in Sources */,
+				7D54A694C1B004A06EFB990041E706C6 /* DTSImageRGBAF.swift in Sources */,
+				121610855022BBB114BBB680EF11687C /* DTSPixel.swift in Sources */,
+				6050B0013EA7A72ACFFB4795B0587506 /* DTSPixelF.swift in Sources */,
+				C7CF144A0CF376A74925A91E2C0D8C4E /* DTSPixelRGBA8.swift in Sources */,
+				CBF4323FB71523ECAA2789B5CF653398 /* DTSPixelRGBAF.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		1B3D77A0A24E5ECEEC88EDC964B326AB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DTSImage;
-			target = B0DC07BAAD1D7815233646F1E2B69825 /* DTSImage */;
+			target = 276B1E68C7CEEAD5E7E0E82CD05EF2B4 /* DTSImage */;
 			targetProxy = 96B3A156EDB1D69C787E478DE2B42E96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0A0B984FAB3D1E5E96A35F2C19B8EFEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ABC0E912DBF84ACD3B8A04ED5E07E93 /* DTSImage.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DTSImage/DTSImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DTSImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DTSImage/DTSImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DTSImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		0AC0517A76C87658326EA90F714D4FA8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3581FDE2EDF45F4B9C7435F647797D2F /* Pods-DTSImageExampleTests.debug.xcconfig */;
@@ -623,71 +657,6 @@
 			};
 			name = Release;
 		};
-		3399391FCE1B46D786F80DEEB6F7E59A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50955B5C3BB8F11612FEFBA9E6E7FD99 /* DTSImage.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DTSImage/DTSImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DTSImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DTSImage/DTSImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DTSImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		35CE4E97445CEBB710F0C7A862063127 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 50955B5C3BB8F11612FEFBA9E6E7FD99 /* DTSImage.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DTSImage/DTSImage-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DTSImage/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DTSImage/DTSImage.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DTSImage;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		541BCBEC6E05654C06B6AC68D905A3EA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 93509FBE36793B78F7B7FEA32B082BDF /* Pods-DTSImageExample.debug.xcconfig */;
@@ -794,6 +763,38 @@
 			};
 			name = Debug;
 		};
+		DAB3C61D297D2C4FFE9F7B24D004115D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5ABC0E912DBF84ACD3B8A04ED5E07E93 /* DTSImage.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DTSImage/DTSImage-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DTSImage/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DTSImage/DTSImage.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DTSImage;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -855,11 +856,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		65D87FC13ABD80B8963C454E375E7C0A /* Build configuration list for PBXNativeTarget "DTSImage" */ = {
+		682636A3056DD389D1C3E633FCAB1E46 /* Build configuration list for PBXNativeTarget "DTSImage" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3399391FCE1B46D786F80DEEB6F7E59A /* Debug */,
-				35CE4E97445CEBB710F0C7A862063127 /* Release */,
+				0A0B984FAB3D1E5E96A35F2C19B8EFEA /* Debug */,
+				DAB3C61D297D2C4FFE9F7B24D004115D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

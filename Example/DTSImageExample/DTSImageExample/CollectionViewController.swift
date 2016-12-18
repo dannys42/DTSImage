@@ -25,12 +25,13 @@ class CollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
         guard let originalImage = UIImage(named: "SmallImage") else { return }
         self.originalImage = originalImage
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        self.rgbafScaled_0_5 = DTSImageRGBAF(image: self.originalImage, scaleFactor: 0.5)?.toUIImage()
+
         self.timerHandler()
         let timer = Timer(timeInterval: 0.1, target: self, selector: #selector(timerHandler), userInfo: nil, repeats: true)
         RunLoop.current.add(timer, forMode: .commonModes)
@@ -47,7 +48,7 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 5
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -78,6 +79,10 @@ class CollectionViewController: UICollectionViewController {
         case 3:
             cell.titleLabel.text = "RGBAF w/ mask"
             cell.imageView.image = self.rgbafImageWithMask
+            cell.backgroundColor = backgroundColor
+        case 4:
+            cell.titleLabel.text = "RGBAF x0.5"
+            cell.imageView.image = self.rgbafScaled_0_5
             cell.backgroundColor = backgroundColor
         default:
             cell.titleLabel.text = "(unknown)"
@@ -121,7 +126,7 @@ class CollectionViewController: UICollectionViewController {
     var rgba8Image: UIImage?
     var rgbafImage: UIImage?
     var rgbafImageWithMask: UIImage?
-    
+    var rgbafScaled_0_5: UIImage?
 
     // A simple way to make changes, allowing for visual inspection of changes
     func timerHandler() {
@@ -145,7 +150,6 @@ class CollectionViewController: UICollectionViewController {
         if self.offset >= Int(originalImage.size.height/2) || self.offset >= Int(originalImage.size.width/2) {
             self.offset = 0
         }
-
     }
 
 

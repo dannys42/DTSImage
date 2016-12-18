@@ -29,11 +29,11 @@ public struct DTSImageRGBAF: DTSImage, DTSImageComponentArray {
         
         self.init(width: width, height: height, pixels: pixels)!
     }
-    public init?(image: UIImage) {
-        guard let rgb8Image = DTSImageRGBA8(image: image) else { return nil }
+    public init?(image: UIImage, scaleFactor: Float) {
+        guard let rgb8Image = DTSImageRGBA8(image: image, scaleFactor: scaleFactor) else { return nil }
         
-        let width = Int(image.size.width)
-        let height = Int(image.size.height)
+        let width = rgb8Image.width
+        let height = rgb8Image.height
         
         let numPixels = rgb8Image.numPixels
         let black = Float(0)

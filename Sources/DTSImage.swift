@@ -25,7 +25,7 @@ public protocol DTSImage {
     var width: Int { get }
     var height: Int { get }
     
-    init?(image: UIImage)
+    init?(image: UIImage, scaleFactor: Float)
     init(width: Int, height: Int, fill: DTSImageFillMethod)
 
     func toUIImage() -> UIImage?
@@ -107,6 +107,10 @@ extension DTSImageComponentArray where PixelType: DTSPixelComponentArray {
 }
 
 extension DTSImage {
+    public init?(image: UIImage) {
+        self.init(image: image, scaleFactor: 1)
+    }
+
     public init(width: Float, height: Float, fill: DTSImageFillMethod) {
         self.init(width: Int(width), height: Int(height), fill: fill)
     }
