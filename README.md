@@ -1,18 +1,20 @@
 # DTSImage
 
-[![CI Status](http://img.shields.io/travis/Danny Sung/DTSImage.svg?style=flat)](https://travis-ci.org/Danny Sung/DTSImage)
+[![Build Status](https://travis-ci.org/dannys42/DTSImage.svg?branch=master)](https://travis-ci.org/dannys42/DTSImage)
 [![Version](https://img.shields.io/cocoapods/v/DTSImage.svg?style=flat)](http://cocoapods.org/pods/DTSImage)
 [![License](https://img.shields.io/cocoapods/l/DTSImage.svg?style=flat)](http://cocoapods.org/pods/DTSImage)
 [![Platform](https://img.shields.io/cocoapods/p/DTSImage.svg?style=flat)](http://cocoapods.org/pods/DTSImage)
 
-An iOS Swift library to manage images as raw buffers.  For performance, math
-operations make use of Apple's Accelerate framework where possible.
+An iOS Swift library to manage images as raw buffers, focusing on utilizing
+Apple's Accelerate framework for performanc vector and image operations.
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example/DTSImageExample directory first.
 
 ## Requirements
+
+* iOS 10.x+
 
 ## Installation
 
